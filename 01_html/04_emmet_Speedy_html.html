@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmet_Parent_child_siblings</title>
+</head>
+<body>
+  <!-- 
+=========================================
+PARENT, CHILD, SIBLINGS + EMMET BASICS
+=========================================
+
+1️⃣ Parent Element
+An element that contains another element inside it.
+
+2️⃣ Child Element
+An element that is inside another element.
+
+3️⃣ Sibling Elements
+Elements that share the same parent.
+-->
+
+<h1>Parent, Child and Sibling Example</h1>
+
+<!-- Parent Element -->
+<div>
+
+    <!-- Child Elements of div -->
+    <h2>I am a child of div</h2>
+    <p>I am also a child of div</p>
+
+</div>
+
+<!-- 
+In above example:
+div = Parent
+h2 and p = Children
+h2 and p are siblings of each other
+-->
+
+<hr>
+
+<!-- 
+=========================================
+EMMET (Speedy HTML Writing in VS Code)
+=========================================
+
+Emmet is a shortcut system in VS Code
+that allows writing HTML quickly.
+
+It is NOT HTML.
+It is a VS Code feature.
+-->
+
+<h1>Emmet Examples (Write in VS Code)</h1>
+
+<!-- 
+1️⃣ .className
+
+If you type:
+
+.classBox
+
+and press TAB
+
+VS Code generates:
+<div class="classBox"></div>
+-->
+
+<div class="classBox"></div>
+
+<hr>
+
+<!-- 
+2️⃣ #idName
+
+If you type:
+
+#mainSection
+
+and press TAB
+
+VS Code generates:
+<div id="mainSection"></div>
+-->
+
+<div id="mainSection"></div>
+
+<hr>
+
+<!-- 
+3️⃣ div>p
+
+This means:
+Create a div and inside it create a p
+
+Shortcut:
+div>p
+
+Result:
+-->
+
+<div>
+    <p></p>
+</div>
+
+<hr>
+
+<!-- 
+4️⃣ ul>li*3
+
+This means:
+Create ul
+Inside it create 3 li
+
+Shortcut:
+ul>li*3
+
+Result:
+-->
+
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<hr>
+
+<!-- 
+5️⃣ div.container
+
+Shortcut:
+div.container
+
+Result:
+-->
+
+<div class="container"></div>
+
+<hr>
+
+<!-- 
+6️⃣ div#box.item
+
+Shortcut:
+div#box.item
+
+Result:
+-->
+
+<div id="box" class="item"></div>
+
+<hr>
+<!-- 7️⃣ div-siblings
+Shortcut:
+div>p+div+li*3.list$+footer
+Result: -->
+<div>
+    <p></p>
+    <div></div>
+    <li class="list1"></li>
+    <li class="list2"></li>
+    <li class="list3"></li>
+    <footer></footer>
+</div>
+<!-- 
+SUMMARY:
+
+Parent → contains children
+Child → inside parent
+Siblings → same parent
+
+Emmet:
+.class → class shortcut
+#id → id shortcut
+> → child
+* → multiple elements
++ → siblings
+-->
+  
+</body>
+</html>
