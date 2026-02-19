@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_Text_Formatting_and_Semantics</title>
+</head>
+<body>
+    <!-- 
+HEADINGS, PARAGRAPH & TEXT FORMATTING
+-->
+
+<h1>Text Formatting and Semantic Tags</h1>
+<!-- 1️⃣ HEADINGS -->
+
+<!-- 
+HTML provides 6 heading levels.
+h1 is most important.
+h6 is least important.
+-->
+
+<h1>This is Heading 1</h1>
+<h2>This is Heading 2</h2>
+<h3>This is Heading 3</h3>
+<h4>This is Heading 4</h4>
+<h5>This is Heading 5</h5>
+<h6>This is Heading 6</h6>
+
+<hr>
+
+<!-- 2️⃣ PARAGRAPH -->
+<p>This is a paragraph tag.</p>
+
+<!-- 
+LOREM is dummy text used for practice.
+In VS Code, type:
+lorem
+and press TAB (Emmet shortcut)
+-->
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+<hr>
+
+<!-- 3️⃣ BOLD vs STRONG -->
+<!-- 
+<b> makes text bold visually.
+It has NO semantic meaning.
+-->
+
+<p>This is <b>bold text using b tag</b>.</p>
+
+<!-- 
+<strong> makes text bold AND gives importance.
+Screen readers treat it as important.
+-->
+
+<p>This is <strong>important text using strong tag</strong>.</p>
+
+<hr>
+
+<!-- 4️⃣ ITALIC vs EM -->
+<!-- 
+<i> makes text italic visually.
+No semantic meaning.
+-->
+
+<p>This is <i>italic text using i tag</i>.</p>
+
+<!-- 
+<em> means emphasis.
+Screen readers emphasize this text.
+-->
+
+<p>This is <em>emphasized text using em tag</em>.</p>
+
+<hr>
+
+<!-- 5️⃣ DEL vs STRIKE -->
+<!-- 
+<del> means deleted text (semantic).
+-->
+
+<p>This product costs <del>₹1000</del> ₹800</p>
+
+<!-- 
+<strike> is old and not recommended in modern HTML.
+Use CSS or <del> instead.
+-->
+
+<p>This is <strike>old style strike</strike> (not recommended)</p>
+
+<hr>
+<!-- 6️⃣ SUB and SUP -->
+<!-- 
+<sub> is subscript
+<sup> is superscript
+-->
+
+<p>H<sub>2</sub>O (Water formula)</p>
+<p>10<sup>2</sup> = 100</p>
+
+<hr>
+<!-- 7️⃣ ABBR (Abbreviation) -->
+<!-- 
+<abbr> is used for abbreviations.
+title attribute shows full form on hover.
+-->
+
+<p>I study <abbr title="Computer Science Engineering">CSE</abbr>.</p>
+
+<hr>
+
+<!-- 8️⃣ DFN (Definition) -->
+<!-- 
+<dfn> is used to define a term.
+-->
+
+<p><dfn>HTML</dfn> is a markup language used to structure web pages.</p>
+
+<hr>
+<!-- 9️⃣ INS (Inserted Text) -->
+<!-- 
+<ins> means inserted text.
+Usually shown with underline.
+-->
+
+<p>This is <ins>newly added text</ins>.</p>
+
+<hr>
+
+<!-- 
+SUMMARY:
+
+b → bold (visual only)
+strong → important (semantic)
+
+i → italic (visual only)
+em → emphasis (semantic)
+
+del → deleted text
+strike → old (avoid)
+
+sub → subscript
+sup → superscript
+
+abbr → abbreviation
+dfn → defining a term
+ins → inserted text
+-->
+
+</body>
+</html>
