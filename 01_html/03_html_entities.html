@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    1️⃣ What are HTML Entities?
+
+HTML entities are special codes used to display reserved characters
+that normally have special meaning in HTML.
+
+Example:
+The symbol "<" is used to start a tag.
+So if we write <p>, browser thinks it's a tag.
+
+To display "<" as text, we use an HTML entity.
+
+---
+
+2️⃣ Why Do We Need HTML Entities?
+
+Because some characters are RESERVED in HTML:
+
+<  → used for tags
+>  → used for tags
+&  → used for entities
+"  → used in attributes
+'  → used in attributes
+
+If we want to show them as normal text,
+we must use HTML entities.
+-->
+
+<h1>HTML Entities Example</h1>
+
+<!-- Less than symbol -->
+<p>To display &lt; we use &amp;lt;</p>
+
+<!-- Greater than symbol -->
+<p>To display &gt; we use &amp;gt;</p>
+
+<!-- Ampersand symbol -->
+<p>To display &amp; we use &amp;amp;</p>
+
+<!-- Double quotation mark -->
+<p>To display &quot; we use &amp;quot;</p>
+
+<!-- Single quotation mark -->
+<p>To display &apos; we use &amp;apos;</p>
+
+<!-- Example showing HTML code as text -->
+<p>Example of showing a tag as text:</p>
+<p>&lt;p&gt;This is a paragraph&lt;/p&gt;</p>
+
+<!-- 
+3️⃣ Some Common HTML Entities
+
+&lt;  → <
+&gt;  → >
+&amp; → &
+&quot; → "
+&apos; → '
+&nbsp; → Non-breaking space
+
+---
+
+4️⃣ What is &nbsp; ?
+
+&nbsp; means "non-breaking space"
+
+It adds extra space between words.
+-->
+
+<p>This&nbsp;&nbsp;&nbsp;sentence&nbsp;has&nbsp;extra&nbsp;space.</p>
+
+<!-- 
+Summary:
+
+HTML entities are used to display reserved characters.
+
+Without entities:
+Browser will think it is HTML code.
+
+With entities:
+Browser shows them as normal text.
+-->
+</body>
+</html>
