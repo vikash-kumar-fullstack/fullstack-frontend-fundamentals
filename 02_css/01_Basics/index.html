@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Types Practical</title>
+
+    <!-- Internal CSS -->
+    <style>
+        h2 {
+            color: green;
+        }
+
+        .internal-box {
+            background-color: lightyellow;
+            padding: 10px;
+            border: 2px solid green;
+        }
+    </style>
+
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Understanding Types of CSS</h1>
+
+    <hr>
+    <!-- priority :- Inline> internal > external , but remember in head tag, the sequence decide the priority of internal and external css -->
+    <!-- 1️⃣ Inline CSS -->
+
+    <h2>1. Inline CSS</h2>
+
+    <!-- Inline CSS is written inside the style attribute in element -->
+    <p style="color: red; font-weight: bold;">
+        This paragraph is styled using Inline CSS.
+    </p>
+
+    <!-- 
+    Inline CSS has highest priority.
+    But it makes HTML messy.
+    it also hard to modify if multiple tag are of same style.
+    Not recommended for large projects.
+    -->
+
+    <hr>
+
+    <!-- 2️⃣ Internal CSS -->
+
+    <h2>2. Internal CSS</h2>
+
+    <div class="internal-box">
+        This box is styled using Internal CSS.
+    </div>
+
+    <!-- 
+    Internal CSS is written inside <style> tag.
+    Better than inline.
+    But still not good for multiple pages.
+    -->
+
+    <hr>
+
+    <!-- 3️⃣ External CSS -->
+
+    <h2>3. External CSS</h2>
+
+    <div class="external-box">
+        This box is styled using External CSS.
+    </div>
+
+    <!-- 
+    External CSS is written in separate file (style.css).
+    This is the professional way.
+    Clean and reusable.
+    -->
+
+</body>
+</html>
