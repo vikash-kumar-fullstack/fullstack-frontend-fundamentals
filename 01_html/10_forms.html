@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <!-- Making form -->
+    <form>
+        <!-- fieldset make a boundary outside the form and form is displayed inside it for better look -->
+         <!-- legend is used to show what type of form it is -->
+        <fieldset>
+            <legend>
+                User Details!!
+            </legend>
+            <!-- name attributes is used to describe about the information what is sent to the server side through the form -->
+             <!-- label's for and id in input denotes, upon clicking the label it highlights its the input box -->
+              <!-- placeholder denotes about what data to be filled in the input box -->
+        
+            <label for="name">First Name :</label>
+            <input type="text" id="name" name="username" placeholder="enter your name"><br><br>
+
+            <label for="address">Address :-</label>
+            <textarea name="useraddress" id="address" rows="5" cols="15" placeholder="enter your address"></textarea><br>
+
+
+            <!-- same name in radio denotes only one gender should be selected by user -->
+            <label for="gender">Select your gender :-</label><br>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="usergender">
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="usergender"><br>
+
+            <label>Choose food items:-</label><br>
+            <label for="pizza">pizza</label>
+            <input type="checkbox" name="pizza" id="pizza">
+            <label for="burger">burger</label>
+            <input type="checkbox" name="burger" id="burger">
+            <label for="biryani">biryani</label>
+            <input type="checkbox" name="biryani" id="biryani">
+
+            <!-- value attribute is used to give the initial value in the input box -->
+            <input type="submit" value="Submit Form">
+        </fieldset>
+    </form>
+</body>
+</html>
