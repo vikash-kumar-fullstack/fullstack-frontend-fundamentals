@@ -1,6 +1,7 @@
 body{
     background-color: #808080;
 }
+
 h1{
     
     color: white;
@@ -24,9 +25,28 @@ margin: 10px 20px 30px;
    → top | right | bottom | left (clockwise)
 */
 margin: 10px 20px 10px 10px;
+
+/* margin: auto;
+   → automatically takes equal left & right margin
+   → mostly used to center a block element
+   → works when width is given
+*/
+margin: auto;
+width: 50%;
+
+/* inherit property:
+   inherit means take value from parent element
+   here h1 will take color from body if used
+*/
+color: inherit;
 }
+
 p{
     color: black;
+
     padding: 10px;
+
     border: 2px solid white;
+
+    /* margin: auto also works here if width is defined */
 }
