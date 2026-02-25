@@ -1,4 +1,46 @@
 /* do not forget to set the font family because only linking the google font is not enough we have to set the font family also */
+
 body{
     font-family: "Poppins", sans-serif;
+
+    /* font-size sets the size of text */
+    font-size: 18px;
+
+    /* font-weight controls thickness of text */
+    /* 400 = normal, 700 = bold */
+    font-weight: 400;
+}
+
+/* heading styling */
+h1{
+
+    font-size: 36px;
+
+    font-weight: 700;
+
+    /*
+    font-variant property controls how text is displayed in small capital form.
+
+    Options:
+
+    normal      → default text (no change)
+    small-caps  → converts lowercase letters into smaller uppercase letters
+
+    Important:
+    small-caps does NOT fully convert text to uppercase.
+    It only makes lowercase letters appear as smaller capital letters.
+    */
+
+    font-variant: small-caps;
+}
+
+/* paragraph styling */
+p{
+
+    font-size: 16px;
+
+    font-weight: 300;
+
+    /* default text style */
+    font-variant: normal;
 }

@@ -1,0 +1,107 @@
+body{
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+/* TEXT COLOR */
+
+/*
+color property changes text color.
+HEX is preferred because it gives exact color.
+*/
+
+.color-example{
+    color: #00ffcc;
+}
+
+/* TEXT DECORATION */
+
+/*
+text-decoration options:
+none
+underline denotes below text
+overline denotes above text
+line-through on the text
+
+Most used:
+underline and line-through
+*/
+
+.decoration-example{
+    text-decoration: overline;
+}
+
+/* TEXT ALIGN */
+
+/*
+text-align options:
+left
+right
+center
+justify
+start
+end
+
+justify → spreads text evenly
+start → depends on text direction
+end → opposite of start
+*/
+
+.align-example{
+    text-align: justify;
+}
+
+
+/* LETTER & WORD SPACING */
+
+/*
+letter-spacing → space between letters
+word-spacing → space between words
+*/
+
+.spacing-example{
+    letter-spacing: 2px;
+    word-spacing: 5px;
+}
+
+/* TEXT TRANSFORM */
+
+/*
+text-transform options:
+uppercase
+lowercase
+capitalize
+
+Mostly used:
+uppercase & capitalize
+*/
+
+.transform-example{
+    text-transform: capitalize;
+}
+
+/* TEXT INDENT & LINE HEIGHT */
+
+/*
+text-indent → space at beginning of paragraph
+line-height → space between lines
+*/
+
+.indent-example{
+    text-indent: 40px;
+    line-height: 1.8;
+}
+
+/* DIRECTION */
+
+/*
+direction options:
+ltr → left to right (default)
+rtl → right to left
+
+rtl used for Arabic, Urdu etc.
+*/
+
+.direction-example{
+    direction: rtl;
+}
