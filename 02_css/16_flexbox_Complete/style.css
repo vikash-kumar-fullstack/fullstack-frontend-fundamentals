@@ -1,0 +1,358 @@
+/*GENERAL STYLING*/
+
+body{
+
+    font-family:Arial;
+    padding:30px;
+
+}
+
+.item{
+
+    width:80px;
+    height:80px;
+
+    background:lightblue;
+    border:2px solid black;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.tall{
+
+    height:120px;
+
+}
+
+
+
+/*FLEX PROPERTY*/
+
+/*
+To start using flexbox we must create
+a flex container.
+
+Syntax
+
+display:flex;
+
+All children automatically become
+flex items.
+*/
+
+.flex-container{
+
+    display:flex;
+
+    border:2px dashed gray;
+    padding:10px;
+
+}
+
+
+
+/*INLINE FLEX*/
+
+/*
+display:inline-flex
+
+Works same as flex but the container
+behaves like an inline element.
+
+Example
+
+display:inline-flex;
+*/
+
+
+
+/*FLEX DIRECTION*/
+
+/*
+flex-direction decides the direction
+of items inside container.
+
+Syntax
+
+flex-direction:value;
+
+Values
+
+row (default)
+column
+row-reverse
+column-reverse
+*/
+
+.direction-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    border:2px dashed gray;
+    padding:10px;
+
+}
+
+
+
+/*FLEX WRAP*/
+
+/*
+Normally flex items stay in one row.
+
+flex-wrap allows them to move
+to the next line.
+
+Values
+
+nowrap
+wrap
+wrap-reverse
+*/
+
+.wrap-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    width:300px;
+
+    border:2px dashed gray;
+    padding:10px;
+
+}
+
+
+
+/*FLEX FLOW*/
+
+/*
+flex-flow is shorthand of
+
+flex-direction
++
+flex-wrap
+
+Example
+
+flex-flow:row wrap;
+*/
+
+
+
+/*JUSTIFY CONTENT*/
+
+/*
+Controls alignment on main axis.
+
+Values
+
+flex-start
+flex-end
+center
+space-between
+space-around
+space-evenly
+*/
+
+.justify-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    border:2px dashed gray;
+    padding:10px;
+
+}
+
+
+
+/*ALIGN ITEMS*/
+
+/*
+Controls alignment on cross axis.
+
+Values
+
+flex-start
+flex-end
+center
+stretch
+baseline
+*/
+
+.align-items-container{
+
+    display:flex;
+
+    align-items:center;
+
+    height:150px;
+
+    border:2px dashed gray;
+
+}
+
+
+
+/*ALIGN CONTENT*/
+
+/*
+Works only when flex-wrap is enabled.
+
+It controls spacing between multiple rows.
+
+Values
+
+flex-start
+flex-end
+center
+space-between
+space-around
+space-evenly
+*/
+
+.align-content-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-content:space-between;
+
+    height:250px;
+    width:300px;
+
+    border:2px dashed gray;
+
+}
+
+
+
+/*GAP PROPERTY*/
+
+/*
+gap creates space between flex items.
+
+Syntax
+
+gap:20px;
+*/
+
+.wrap-container{
+
+    gap:10px;
+
+}
+
+
+
+/*FLEX ITEM PROPERTIES*/
+
+/*
+These properties are applied
+on flex items (children).
+*/
+
+.item-container{
+
+    display:flex;
+
+    border:2px dashed gray;
+    padding:10px;
+
+}
+
+
+
+/*ORDER PROPERTY*/
+
+/*
+order changes the order
+in which items appear.
+
+Default value = 0
+
+Smaller number appears first.
+*/
+
+.item1{
+
+    order:2;
+
+}
+
+.item2{
+
+    order:1;
+
+}
+
+.item3{
+
+    order:3;
+
+}
+
+
+
+/*FLEX GROW*/
+
+/*
+flex-grow allows items to grow
+and take extra space.
+
+Default value = 0
+*/
+
+.item2{
+
+    flex-grow:1;
+
+}
+
+
+
+/*FLEX SHRINK*/
+
+/*
+flex-shrink allows items to shrink
+when container becomes smaller.
+
+Default value = 1
+*/
+
+.item3{
+
+    flex-shrink:2;
+
+}
+
+
+
+/*ALIGN SELF*/
+
+/*
+align-self overrides align-items
+for a specific item.
+
+Values
+
+flex-start
+flex-end
+center
+stretch
+*/
+
+.item1{
+
+    align-self:flex-end;
+
+}
