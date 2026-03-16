@@ -20,46 +20,36 @@ body{
 /* MEDIA QUERY */
 
 /*
-Media Query is used to apply CSS based on screen size or also called viewport.
+Media Query is used to apply CSS based on screen size or viewport.
 
 It helps create responsive websites.
 
 Responsive means:
-The layout adjusts automatically for
-mobile, tablet, and desktop screens.
-
-Without media queries,
-a website may look good on desktop
-but break on mobile screens.
-
-Media queries check the viewport size
-and apply CSS accordingly.
+The layout automatically adjusts for
+mobile, tablet, laptop, and desktop screens.
 
 Viewport = visible screen area of the browser.
 
-Common breakpoints:
+Common device breakpoints used in real projects:
 
 mobile → up to 600px
-tablet → 601px to 900px
-desktop → above 900px
+large mobile / small tablet → 600px+
+tablet → 768px+
+laptop / small desktop → 992px+
+large desktop → 1200px+
 */
 
 
 
-/* MAX-WIDTH METHOD */
+/* MOBILE DEVICES */
 
 /*
 max-width means:
 
-Apply this CSS
-when screen width is LESS THAN or EQUAL to the value.
+Apply this CSS when screen width
+is LESS THAN OR EQUAL to the value.
 
-Used mainly for mobile-first adjustments.
-
-Example below:
-
-If screen width ≤ 600px
-the box becomes smaller.
+This is commonly used for small screens like phones.
 */
 
 @media (max-width: 600px){
@@ -73,7 +63,7 @@ the box becomes smaller.
 
 
 
-/* MIN-WIDTH METHOD */
+/* LARGE MOBILE / SMALL TABLET */
 
 /*
 min-width means:
@@ -81,20 +71,53 @@ min-width means:
 Apply CSS when screen width
 is GREATER THAN OR EQUAL to the value.
 
-Used when designing layouts
-that expand for larger screens.
-
-Example below:
-
-If screen width ≥ 900px
-box becomes larger.
+This expands layout as screen size increases.
 */
 
-@media (min-width: 900px) {
+@media (min-width: 600px){
+
+    .box{
+        width: 300px;
+        background-color: green;
+    }
+
+}
+
+
+
+/* TABLET DEVICES */
+
+@media (min-width: 768px){
+
+    .box{
+        width: 400px;
+        background-color: orange;
+    }
+
+}
+
+
+
+/* LAPTOP / SMALL DESKTOP */
+
+@media (min-width: 992px){
 
     .box{
         width: 500px;
-        background-color: orange;
+        background-color: blue;
+    }
+
+}
+
+
+
+/* LARGE DESKTOP */
+
+@media (min-width: 1200px){
+
+    .box{
+        width: 600px;
+        background-color: red;
     }
 
 }
@@ -104,26 +127,29 @@ box becomes larger.
 /* RANGE MEDIA QUERY (INEQUALITY METHOD) */
 
 /*
-Modern CSS also allows range queries
-using inequality operators.
+Modern CSS also allows range queries.
 
 Example:
 
 (width >= 600px) and (width <= 900px)
-here we can also write (min-width:600px) and (max-width:900)
+
 This means:
 
 Apply CSS when screen width
 is between 600px and 900px.
 
-This is commonly used for tablets.
+Same thing can also be written as:
+
+(min-width:600px) and (max-width:900px)
+
+This method is useful when targeting
+a specific device range.
 */
 
 @media (600px <= width <= 900px){
 
     .box{
-        width: 350px;
-        background-color: green;
+        border: 4px solid white;
     }
 
 }
@@ -133,14 +159,14 @@ This is commonly used for tablets.
 /* IMPORTANT POINTS */
 
 /*
-max-width → used when styling smaller screens
+max-width → mostly used for mobile adjustments
 
-min-width → used when expanding layout for larger screens
+min-width → used for larger screens
 
-range query → used when targeting specific screen ranges
+range queries → used for specific device ranges
 
-Mobile-first design usually starts with:
+Mobile-first design usually works like this:
 
-small screen styles first
-then uses min-width queries for larger screens.
+1. Write CSS for small screens first
+2. Then expand layout using min-width queries
 */
