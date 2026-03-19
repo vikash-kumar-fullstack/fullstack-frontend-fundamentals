@@ -1,9 +1,10 @@
 /*
-DOM Practice File
-Connected with index.html
-
 DOM = Document Object Model
-JS uses DOM to access and change HTML
+
+Browser converts HTML into object structure
+JS uses it to read/change page
+
+Everything in HTML becomes an object (node)
 */
 
 
@@ -13,29 +14,28 @@ JS uses DOM to access and change HTML
 ------------------------------------------
 */
 
-// by id
-let title = document.getElementById("title");
-
-// by class (returns HTMLCollection)
-let items = document.getElementsByClassName("item");
-
-// by id
+let title = document.getElementById("title"); // by id
+let items = document.getElementsByClassName("item"); // by class
 let button = document.getElementById("btn");
 let input = document.getElementById("inputBox");
 let link = document.getElementById("link");
 
 
+// modern way
+let firstLi = document.querySelector("li"); // first match
+let allLi = document.querySelectorAll("li"); // all matches
+
+
+
 /*
 ------------------------------------------
-2. Changing text/content
+2. Changing content
 ------------------------------------------
 */
 
-// innerText → only text
-title.innerText = "DOM Learning Started";
+title.innerText = "DOM Started"; // text only
 
-// innerHTML → allows HTML tags
-// title.innerHTML = "<span>New Title</span>";
+title.innerHTML = "<span>DOM Started (HTML)</span>"; // allows HTML
 
 
 
@@ -52,49 +52,67 @@ title.style.fontSize = "30px";
 
 /*
 ------------------------------------------
-4. Loop through elements
+4. Working with attributes
 ------------------------------------------
 */
 
-for (let item of items) {
-    console.log(item.innerText);
-}
+console.log(link.getAttribute("href")); // get
+
+link.setAttribute("href", "https://google.com"); // set
 
 
 
 /*
 ------------------------------------------
-5. Working with attributes
+5. Class handling (VERY IMPORTANT)
 ------------------------------------------
 */
 
-// get attribute
-console.log(link.getAttribute("href"));
+// add class
+title.classList.add("active");
 
-// set attribute
-link.setAttribute("href", "https://google.com");
+// remove class
+title.classList.remove("active");
+
+// toggle class (add/remove automatically)
+title.classList.toggle("active");
+
+// check class
+console.log(title.classList.contains("active"));
+
 
 
 /*
 ------------------------------------------
-6. Creating and adding elements
+6. Creating elements
 ------------------------------------------
 */
 
-// create element
 let newDiv = document.createElement("div");
 
-// add text
-newDiv.innerText = "I am dynamically added";
+newDiv.innerText = "I am new element";
 
-// add to page
-document.body.appendChild(newDiv);
+newDiv.classList.add("box");
 
 
 
 /*
 ------------------------------------------
-7. Removing elements
+7. Adding elements
+------------------------------------------
+*/
+
+// add at end
+document.body.appendChild(newDiv);
+
+// add at start
+document.body.prepend(newDiv);
+
+
+
+/*
+------------------------------------------
+8. Removing elements
 ------------------------------------------
 */
 
@@ -106,60 +124,79 @@ setTimeout(() => {
 
 /*
 ------------------------------------------
-8. Event Handling
+9. Traversing DOM (moving around)
 ------------------------------------------
 */
 
-// using addEventListener (BEST PRACTICE)
+let list = document.getElementById("list");
 
+// parent
+console.log(list.parentElement);
+
+// children
+console.log(list.children);
+
+// first child
+console.log(list.firstElementChild);
+
+// last child
+console.log(list.lastElementChild);
+
+
+
+/*
+------------------------------------------
+10. Looping elements
+------------------------------------------
+*/
+
+for (let item of items) {
+    console.log(item.innerText);
+}
+
+allLi.forEach(function (li) {
+    console.log(li.innerText);
+});
+
+
+
+/*
+------------------------------------------
+11. Event handling
+------------------------------------------
+*/
+
+// best way
 button.addEventListener("click", function () {
     console.log("Button clicked");
-    title.innerText = "Button was clicked";
 });
 
 
 /*
-------------------------------------------
-IMPORTANT DIFFERENCE
-------------------------------------------
+Difference:
 
-1. Using HTML (onclick)
-
+HTML way:
 <button onclick="handleClick()"></button>
 
-function handleClick() {
-    console.log("clicked");
-}
-
-Here:
-- function is CALLED from HTML
-- tightly coupled (not good practice)
-
-
-2. Using JS (addEventListener)
-
+JS way:
 button.addEventListener("click", handleClick);
 
-function handleClick() {
-    console.log("clicked");
-}
+function handleClick() {}
 
-Here:
-- we only pass function reference (no ())
-- JS handles calling it
-- better separation of code (used in real projects)
-
+Important:
+- here we pass function (no ())
+- JS will call it on event
 
 Wrong:
-button.addEventListener("click", handleClick());
-
-This will run immediately, not on click
+handleClick() → runs immediately
 */
 
 
 
 /*
-9. Input event
+------------------------------------------
+12. Input event
+------------------------------------------
 */
 
 input.addEventListener("input", function () {
@@ -169,19 +206,38 @@ input.addEventListener("input", function () {
 
 
 /*
-10. querySelector (modern way)
+------------------------------------------
+13. Event object
+------------------------------------------
 */
 
-// first matching element
-let firstItem = document.querySelector("li");
-console.log(firstItem.innerText);
-
-// all matching elements (NodeList)
-let allItems = document.querySelectorAll("li");
-
-allItems.forEach(function (item) {
-    console.log(item.innerText);
+button.addEventListener("click", function (event) {
+    console.log(event); // gives full event info
 });
 
 
 
+/*
+------------------------------------------
+14. Changing multiple elements
+------------------------------------------
+*/
+
+allLi.forEach(function (li) {
+    li.style.color = "green";
+});
+
+
+
+/*
+------------------------------------------
+15. Important notes
+------------------------------------------
+
+- document is main object
+- everything is node
+- querySelector is most used
+- classList is very important
+- events make page interactive
+- DOM is used only in browser, not Node.js
+*/
