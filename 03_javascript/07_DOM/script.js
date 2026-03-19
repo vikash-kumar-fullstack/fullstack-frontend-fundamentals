@@ -228,16 +228,97 @@ allLi.forEach(function (li) {
 });
 
 
-
 /*
 ------------------------------------------
-15. Important notes
+HTMLCollection vs NodeList (IMPORTANT)
 ------------------------------------------
 
-- document is main object
-- everything is node
-- querySelector is most used
-- classList is very important
-- events make page interactive
-- DOM is used only in browser, not Node.js
+When we select elements in DOM, different methods return different types.
+
+
+1. getElementsByTagName()
+2. getElementsByClassName()
+
+→ These return HTMLCollection
+
+Example:
+let items = document.getElementsByClassName("item");
+
+Important points:
+- looks like array but not real array
+- we cannot use forEach directly
+- we have to use loop or indexing (items[0], items[1])
+- it is LIVE (auto updates if DOM changes)
+
+
+
+3. querySelectorAll()
+
+→ This returns NodeList
+
+Example:
+let items = document.querySelectorAll(".item");
+
+Important points:
+- looks like array
+- supports forEach (easy to use)
+- mostly STATIC (does not update automatically)
+
+
+
+4. querySelector()
+
+→ returns only FIRST matching element (not list)
+
+Example:
+let item = document.querySelector(".item");
+
+
+
+5. getElementById()
+
+→ returns single element
+
+Example:
+let el = document.getElementById("title");
+
+
+
+------------------------------------------
+Difference between HTMLCollection and NodeList
+------------------------------------------
+
+HTMLCollection:
+- returned by old methods
+- live collection
+- no forEach
+- need loop or index
+
+NodeList:
+- returned by querySelectorAll
+- static (mostly)
+- supports forEach
+- easier to use
+
+
+
+------------------------------------------
+Common mistake
+------------------------------------------
+
+Wrong:
+let items = document.getElementsByClassName("item");
+items.style.color = "red";   // ❌ error
+
+Correct:
+items[0].style.color = "red";  // ✔
+
+
+
+------------------------------------------
+Best practice
+------------------------------------------
+
+Use querySelector / querySelectorAll in most cases
+because code becomes cleaner and easier
 */
