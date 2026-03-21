@@ -1,5 +1,4 @@
 /*
-01_objects.js
 TOPIC: Objects in JavaScript (Node.js)
 
 Object = a collection of key-value pairs
