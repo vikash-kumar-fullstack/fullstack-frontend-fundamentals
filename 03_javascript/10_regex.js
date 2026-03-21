@@ -1,6 +1,4 @@
 /*
-03_regex.js
-
 TOPIC: Regular Expressions (Regex)
 
 Regex = pattern used to match text
