@@ -247,3 +247,32 @@ this.name → undefined
 obj2.arrowFunc();
 
 
+
+/*
+------------------------------------------
+8. FUNCTION CONSTRUCTOR (OLD WAY)
+------------------------------------------
+
+Before class, we used function
+*/
+
+function Animal(name) {
+    this.name = name;
+
+    this.sound = function () {
+        console.log(this.name + " makes sound");
+    };
+}
+
+let a1 = new Animal("Dog");
+
+/*
+a1 = {
+    name: "Dog",
+    sound: function...
+}
+*/
+
+a1.sound();
+
+
