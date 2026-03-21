@@ -1,6 +1,4 @@
 /*
-05_set_map.js
-
 TOPIC: Set and Map in JavaScript (Deep Dive)
 
 ------------------------------------------
