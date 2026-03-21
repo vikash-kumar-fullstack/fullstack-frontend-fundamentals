@@ -276,3 +276,81 @@ a1 = {
 a1.sound();
 
 
+
+/*
+------------------------------------------
+IMPORTANT PROBLEM HERE
+------------------------------------------
+
+Every object gets its own copy of function
+
+Bad for memory
+*/
+
+let a2 = new Animal("Cat");
+
+// a1.sound !== a2.sound (different functions)
+
+
+
+/*
+------------------------------------------
+9. CLASS vs FUNCTION CONSTRUCTOR
+------------------------------------------
+
+Class:
+- method stored once in prototype
+- memory efficient
+
+Function constructor:
+- method recreated for every object (if inside function)
+*/
+
+
+
+/*
+------------------------------------------
+10. DIFFERENCE FROM C++
+------------------------------------------
+
+C++:
+- strict types
+- need access modifiers (public/private)
+- class is real structure
+- we can have multiple constructors called constructor overrloading
+
+JavaScript:
+- dynamic typing
+- no strict access control
+- class is just syntactic sugar over function
+- we can have only one constructors
+*/
+
+
+
+/*
+------------------------------------------
+11. WHAT IF WE FORGET new?
+------------------------------------------
+*/
+
+function Test(name) {
+    this.name = name;
+}
+
+// let t = Test("Vikash");
+
+/*
+Problem:
+
+this = global object
+
+So:
+global.name = "Vikash"
+
+This is bug
+
+So always use new
+*/
+
+
