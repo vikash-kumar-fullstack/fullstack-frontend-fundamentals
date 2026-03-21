@@ -162,3 +162,88 @@ s1.show();
 
 
 
+/*
+------------------------------------------
+5. this in NORMAL FUNCTION
+------------------------------------------
+
+Depends on HOW function is called
+*/
+
+function showName() {
+    console.log(this);
+}
+
+showName();
+
+/*
+In Node:
+this → global object
+
+In strict mode:
+this → undefined
+*/
+
+
+
+/*
+------------------------------------------
+6. this inside object
+------------------------------------------
+*/
+
+let obj = {
+    name: "Vikash",
+
+    show: function () {
+        console.log(this.name);
+    }
+};
+
+obj.show();
+
+/*
+this → obj
+
+So:
+this.name → obj.name → "Vikash"
+*/
+
+
+
+/*
+------------------------------------------
+7. this in ARROW FUNCTION (VERY IMPORTANT)
+------------------------------------------
+
+Arrow function DOES NOT have its own this
+It takes from parent scope
+*/
+
+let obj2 = {
+    name: "Amit",
+
+    normalFunc: function () {
+        console.log("Normal:", this.name);
+    },
+
+    arrowFunc: () => {
+        console.log("Arrow:", this.name);
+    }
+};
+
+obj2.normalFunc(); // Amit
+
+/*
+arrowFunc:
+
+this is NOT obj2
+this comes from outer scope (global)
+
+So:
+this.name → undefined
+*/
+
+obj2.arrowFunc();
+
+
