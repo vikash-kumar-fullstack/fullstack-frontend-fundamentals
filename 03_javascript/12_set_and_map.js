@@ -162,13 +162,26 @@ console.log(newArr);
 ------------------------------------------
 */
 
+// examples 1:
+
 let nums = [1, 2, 2, 3, 4, 4];
 
 let unique = [...new Set(nums)];
 
 console.log(unique);
 
+// examples 2:
 
+let set1=new Set([1,2,3,4])
+let set2=new Set([3,4,5,6])
+
+function setDifference(set1,set2){
+    //  return new Set(Array.from(set1).filter((ele)=> !set2.has(ele)))   //both are correct
+    return new Set([...set1].filter((ele)=> !set2.has(ele)))
+}
+let setDiff=new Set();
+setDiff.add(setDifference(set1,set2))
+console.log(setDiff)
 
 /*
 ------------------------------------------
