@@ -1,6 +1,4 @@
 /*
-04_spread_rest_destructuring.js
-
 TOPIC: Spread, Rest, and Destructuring in JavaScript
 
 These three look similar (...) but behave differently depending on usage
@@ -157,3 +155,110 @@ let { city = "Patna" } = person;
 
 console.log(city);
 
+
+
+/*
+------------------------------------------
+5. COMBINATION (SPREAD + DESTRUCTURING)
+------------------------------------------
+*/
+
+let numbers = [1, 2, 3, 4, 5];
+
+let [firstNum, ...restNums] = numbers;
+
+console.log(firstNum);  // 1
+console.log(restNums);  // [2,3,4,5]
+
+
+
+/*
+------------------------------------------
+6. IMPORTANT DIFFERENCE
+------------------------------------------
+
+SPREAD:
+- expands values
+- used while copying or merging
+
+Example:
+[...arr]
+
+
+
+REST:
+- collects values
+- used in function parameters
+
+Example:
+function(...args)
+
+
+
+DESTRUCTURING:
+- extracts values
+- used to get values from array/object
+
+Example:
+let [a, b] = arr
+let {name} = obj
+*/
+
+
+
+/*
+------------------------------------------
+7. COMMON CONFUSION (VERY IMPORTANT)
+------------------------------------------
+
+Spread vs Rest look same (...)
+
+But difference depends on position:
+
+LEFT SIDE → Rest (collect)
+RIGHT SIDE → Spread (expand)
+*/
+
+
+// rest (left side)
+let [a2, ...rest2] = [1, 2, 3, 4];
+
+
+// spread (right side)
+let newArr = [...rest2];
+
+
+
+/*
+------------------------------------------
+8. PRACTICAL EXAMPLE
+------------------------------------------
+*/
+
+function createUser(name, ...skills) {
+    return {
+        name,
+        skills
+    };
+}
+
+let userData = createUser("Vikash", "JS", "Node", "MongoDB");
+
+console.log(userData);
+
+
+
+/*
+------------------------------------------
+FINAL UNDERSTANDING
+------------------------------------------
+
+- spread → break values
+- rest → collect values
+- destructuring → pick values
+
+This topic is heavily used in:
+- React
+- Node.js APIs
+- modern JavaScript
+*/
