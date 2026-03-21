@@ -168,3 +168,163 @@ let unique = [...new Set(nums)];
 
 console.log(unique);
 
+
+
+/*
+------------------------------------------
+WHAT IS MAP?
+------------------------------------------
+
+Map = key-value pairs (like object but better)
+
+- keys can be ANY type
+- maintains insertion order
+*/
+
+
+/*
+------------------------------------------
+1. Creating Map
+------------------------------------------
+*/
+
+let map = new Map();
+
+map.set("name", "Vikash");
+map.set("age", 21);
+
+console.log(map);
+
+
+
+/*
+------------------------------------------
+2. Getting values
+------------------------------------------
+*/
+
+console.log(map.get("name"));
+
+
+
+/*
+------------------------------------------
+3. Checking key
+------------------------------------------
+*/
+
+console.log(map.has("age"));
+
+
+
+/*
+------------------------------------------
+4. Deleting
+------------------------------------------
+*/
+
+map.delete("age");
+
+console.log(map);
+
+
+
+/*
+------------------------------------------
+5. Size
+------------------------------------------
+*/
+
+console.log(map.size);
+
+
+
+/*
+------------------------------------------
+6. Looping Map
+------------------------------------------
+*/
+
+for (let [key, value] of map) {
+    console.log(key, value);
+}
+
+
+
+/*
+------------------------------------------
+7. Map with different key types
+------------------------------------------
+*/
+
+let objKey = { id: 1 };
+
+map.set(objKey, "Object as key");
+
+console.log(map.get(objKey));
+
+
+
+/*
+------------------------------------------
+MAP vs OBJECT (VERY IMPORTANT)
+------------------------------------------
+
+OBJECT:
+- keys are always string or symbol
+- unordered (mostly)
+- used for simple data
+
+MAP:
+- keys can be anything (number, object, function)
+- maintains order
+- better performance for large data
+*/
+
+
+let obj = {};
+obj[1] = "one"; // key becomes string
+
+let m = new Map();
+m.set(1, "one"); // key remains number
+
+console.log(obj);
+console.log(m);
+
+
+
+/*
+------------------------------------------
+WHEN TO USE WHAT?
+------------------------------------------
+
+Use Object:
+- simple data
+- fixed structure
+
+Use Map:
+- dynamic keys
+- keys are not strings
+- frequent add/remove
+
+
+
+/*
+------------------------------------------
+FINAL UNDERSTANDING
+------------------------------------------
+
+Set:
+- unique values
+- no duplicates
+
+Map:
+- key-value pairs
+- flexible keys
+
+Iterable:
+- can be looped using for...of
+
+new Set() needs iterable
+add() is used for single values
+*/
