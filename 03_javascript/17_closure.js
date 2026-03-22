@@ -118,3 +118,120 @@ c2(); // 1 (separate memory)
 Each function has its own closure
 */
 
+
+
+/*
+------------------------------------------
+6. REAL USE CASE (PRIVATE VARIABLE)
+------------------------------------------
+*/
+
+function createBankAccount(balance) {
+
+    function deposit(amount) {
+        balance += amount;
+        console.log("Balance:", balance);
+    }
+
+    function withdraw(amount) {
+        balance -= amount;
+        console.log("Balance:", balance);
+    }
+
+    return {
+        deposit,
+        withdraw
+    };
+}
+
+
+let account = createBankAccount(1000);
+
+account.deposit(500);
+account.withdraw(200);
+
+/*
+balance is private
+cannot access directly
+*/
+
+
+
+
+/*
+------------------------------------------
+7. COMMON MISTAKE (LOOP + CLOSURE)
+------------------------------------------
+*/
+
+for (var i = 1; i <= 3; i++) {
+    setTimeout(function () {
+        console.log(i); // prints 4,4,4
+    }, 1000);
+}
+
+
+/*
+Why?
+var is function scoped
+All closures share same i
+*/
+
+
+/*
+FIX using let
+*/
+
+for (let i = 1; i <= 3; i++) {
+    setTimeout(function () {
+        console.log(i); // 1,2,3
+    }, 1000);
+}
+
+
+
+/*
+------------------------------------------
+8. CLOSURE WITH PARAMETERS
+------------------------------------------
+*/
+
+function multiplyBy(x) {
+    return function (y) {
+        return x * y;
+    };
+}
+
+let double = multiplyBy(2);
+
+console.log(double(5)); // 10
+
+
+
+/*
+------------------------------------------
+9. INTERVIEW DEFINITION
+------------------------------------------
+
+Closure = function + its lexical environment
+
+Means:
+function remembers variables where it was created
+*/
+
+
+
+/*
+------------------------------------------
+10. FINAL UNDERSTANDING
+------------------------------------------
+
+- inner function can access outer variables
+- outer function finishes, but data remains
+- each closure has separate memory
+- used for:
+    - data hiding
+    - counters
+    - private variables
+    - callbacks
+*/
