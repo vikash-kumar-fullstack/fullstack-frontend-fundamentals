@@ -1,0 +1,441 @@
+# Linux Commands for Full Stack Developer 
+
+---
+
+# 1. Basic Navigation Commands
+
+---
+
+## pwd → Print current directory
+
+```bash
+pwd
+```
+
+Shows where you are
+
+---
+
+## ls → List files
+
+```bash
+ls
+ls -l      # detailed view
+ls -a      # hidden files
+```
+
+---
+
+## cd → Change directory
+
+```bash
+cd folderName
+cd ..
+cd ~
+```
+
+* `..` → go back
+* `~` → home folder
+
+---
+
+# 2. File & Folder Management
+
+---
+
+## mkdir → Create folder
+
+```bash
+mkdir project
+```
+
+---
+
+## touch → Create file
+
+```bash
+touch index.js
+```
+
+---
+
+## rm → Delete file
+
+```bash
+rm file.txt
+rm -r folderName   # delete folder
+rm -rf folderName  # force delete (danger)
+```
+
+---
+
+## cp → Copy
+
+```bash
+cp file.txt copy.txt
+cp -r folder folderCopy
+```
+
+---
+
+## mv → Move or Rename
+
+```bash
+mv file.txt newName.txt
+mv file.txt folder/
+```
+
+---
+
+# 3. File Viewing & Editing
+
+---
+
+## cat → Show file content
+
+```bash
+cat file.txt
+```
+
+---
+
+## less → Scroll file
+
+```bash
+less file.txt
+```
+
+---
+
+## head / tail
+
+```bash
+head file.txt      # first lines
+tail file.txt      # last lines
+tail -f logs.txt   # live logs
+```
+
+---
+
+# 4. Permissions (Very Important)
+
+---
+
+## chmod → Change permissions
+
+```bash
+chmod 755 file.sh
+```
+
+Meaning:
+
+* Owner → full
+* Others → read + execute
+
+---
+
+## chown → Change owner
+
+```bash
+chown user file.txt
+```
+
+---
+
+# 5. Process Management
+
+---
+
+## ps → Show running processes
+
+```bash
+ps
+ps aux
+```
+
+---
+
+## top → Live processes
+
+```bash
+top
+```
+
+---
+
+## kill → Stop process
+
+```bash
+kill PID
+kill -9 PID
+```
+
+---
+
+# 6. Network Commands (Very Important)
+
+---
+
+## ping → Check connectivity
+
+```bash
+ping google.com
+```
+
+---
+
+## curl → Call API
+
+```bash
+curl https://api.example.com
+```
+
+POST request:
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"name":"Vikash"}' URL
+```
+
+---
+
+## wget → Download file
+
+```bash
+wget file_url
+```
+
+---
+
+## netstat → Check ports
+
+```bash
+netstat -tuln
+```
+
+---
+
+## lsof → Check which process uses port
+
+```bash
+lsof -i :3000
+```
+
+---
+
+# 7. Package Management
+
+---
+
+## apt (Ubuntu)
+
+```bash
+sudo apt update
+sudo apt install nodejs
+```
+
+---
+
+## npm (Node.js)
+
+```bash
+npm install
+npm install express
+```
+
+---
+
+# 8. Environment Variables
+
+---
+
+## Set variable
+
+```bash
+export PORT=3000
+```
+
+---
+
+## View variable
+
+```bash
+echo $PORT
+```
+
+---
+
+# 9. Git (Must Know for Interviews)
+
+---
+
+## Clone repo
+
+```bash
+git clone URL
+```
+
+---
+
+## Add & Commit
+
+```bash
+git add .
+git commit -m "message"
+```
+
+---
+
+## Push
+
+```bash
+git push origin main
+```
+
+---
+
+## Pull
+
+```bash
+git pull origin main
+```
+
+---
+
+## Check status
+
+```bash
+git status
+```
+
+---
+
+# 10. Useful Shortcuts
+
+---
+
+## Clear terminal
+
+```bash
+clear
+```
+
+---
+
+## Command history
+
+```bash
+history
+```
+
+---
+
+## Search command
+
+```bash
+ctrl + r
+```
+
+---
+
+# 11. Important for Deployment
+
+---
+
+## Run Node server
+
+```bash
+node app.js
+```
+
+---
+
+## Run in background
+
+```bash
+nohup node app.js &
+```
+
+---
+
+## Using pm2 (recommended)
+
+```bash
+npm install -g pm2
+pm2 start app.js
+pm2 list
+pm2 stop app
+```
+
+---
+
+# 12. Disk & System Info
+
+---
+
+## Check disk
+
+```bash
+df -h
+```
+
+---
+
+## Folder size
+
+```bash
+du -sh folder
+```
+
+---
+
+## System info
+
+```bash
+uname -a
+```
+
+---
+
+# 13. Pipes & Redirection (Important Concept)
+
+---
+
+## Pipe (|)
+
+```bash
+ls | grep ".js"
+```
+
+Output of one → input of another
+
+---
+
+## Redirect (>)
+
+```bash
+echo "hello" > file.txt
+```
+
+---
+
+## Append (>>)
+
+```bash
+echo "new line" >> file.txt
+```
+
+---
+
+# 14. Interview Important Commands
+
+* ls, cd, pwd
+* mkdir, rm, cp, mv
+* chmod
+* ps, kill
+* curl
+* git commands
+* environment variables
+* pipes and redirection
+
+---
+
