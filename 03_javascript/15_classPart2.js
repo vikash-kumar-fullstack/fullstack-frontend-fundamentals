@@ -89,3 +89,52 @@ u1.name = "Rahul";
 console.log(u1.name);
 
 
+
+/*
+------------------------------------------
+3. PRIVATE PROPERTIES
+------------------------------------------
+
+# means private (cannot access outside class)
+*/
+
+class BankAccount {
+    #balance;   // private property
+
+    constructor(balance) {
+        this.#balance = balance;
+    }
+
+    deposit(amount) {
+        this.#balance += amount;
+    }
+
+    getBalance() {
+        return this.#balance;
+    }
+}
+
+let acc = new BankAccount(1000);
+
+acc.deposit(500);
+
+console.log(acc.getBalance());
+
+/*
+console.log(acc.#balance);  error (private)
+*/
+
+
+
+/*
+------------------------------------------
+4. STATIC vs NORMAL METHOD
+------------------------------------------
+
+Normal method:
+- belongs to object
+
+Static method:
+- belongs to class
+*/
+
