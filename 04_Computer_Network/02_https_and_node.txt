@@ -1,0 +1,343 @@
+# Computer Networking – Next Level (For Full Stack)
+
+Now we go deeper into what actually matters in development.
+
+Focus:
+
+* HTTP methods
+* Status codes
+* Headers
+* Cookies
+* How backend (Node.js) handles requests
+
+All in simple words.
+
+---
+
+## 1. What is HTTP?
+
+HTTP = rules for communication between browser and server
+
+Whenever frontend talks to backend → HTTP is used
+
+Example:
+Browser → "give me data"
+Server → "here is data"
+
+Important:
+HTTP is **stateless**
+→ Server does not remember previous requests
+
+---
+
+## 2. HTTP Methods (Very Important)
+
+These tell what action you want to perform.
+
+---
+
+### GET → Fetch data
+
+Example:
+
+* Open website
+* Get user data
+
+```
+GET /users
+```
+
+Meaning:
+"Give me users"
+
+---
+
+### POST → Send data
+
+Example:
+
+* Login
+* Signup
+* Add product
+
+```
+POST /users
+```
+
+Meaning:
+"Create new user"
+
+---
+
+### PUT → Update full data
+
+```
+PUT /users/1
+```
+
+Meaning:
+"Update entire user"
+
+---
+
+### PATCH → Update partial data
+
+```
+PATCH /users/1
+```
+
+Meaning:
+"Update only some fields"
+
+---
+
+### DELETE → Remove data
+
+```
+DELETE /users/1
+```
+
+Meaning:
+"Delete user"
+
+---
+
+## 3. HTTP Status Codes
+
+Server always sends a status code.
+
+---
+
+### 200 → Success
+
+Everything worked
+
+---
+
+### 201 → Created
+
+New data created (POST)
+
+---
+
+### 400 → Bad Request
+
+Client mistake
+
+---
+
+### 401 → Unauthorized
+
+Login required
+
+---
+
+### 403 → Forbidden
+
+No permission
+
+---
+
+### 404 → Not Found
+
+Route or data not found
+
+---
+
+### 500 → Server Error
+
+Backend crashed or bug
+
+---
+
+## 4. HTTP Headers
+
+Headers = extra information sent with request/response
+
+---
+
+### Example Request
+
+```
+GET /users HTTP/1.1
+Host: example.com
+Authorization: Bearer token
+Content-Type: application/json
+```
+
+---
+
+### Common Headers
+
+* Content-Type → data type (JSON, HTML)
+* Authorization → login token
+* User-Agent → browser info
+
+Simple idea:
+Headers = metadata about request
+
+---
+
+## 5. Request Body
+
+Used when sending data (POST, PUT)
+
+Example:
+
+```
+{
+  "name": "Vikash",
+  "email": "abc@gmail.com"
+}
+```
+
+---
+
+## 6. Cookies
+
+Cookies = small data stored in browser
+
+Used for:
+
+* Login sessions
+* Tracking user
+
+Example:
+After login → server sends cookie
+Browser stores it → sends back in every request
+
+---
+
+## 7. Sessions (Important)
+
+Session = server-side storage of user data
+
+Flow:
+
+1. User logs in
+2. Server creates session
+3. Server gives session ID (cookie)
+4. Browser sends session ID every time
+
+---
+
+## 8. Token (JWT)
+
+Modern approach instead of sessions
+
+After login:
+
+* Server gives token
+* Browser stores token
+* Sends token in headers
+
+Example:
+
+```
+Authorization: Bearer token
+```
+
+---
+
+## 9. What Happens Inside Node.js (Very Important)
+
+When request comes:
+
+---
+
+### Step 1: Request arrives
+
+Browser → Node server
+
+---
+
+### Step 2: Express handles route
+
+Example:
+
+```
+app.get("/users", (req, res) => {})
+```
+
+Express checks:
+
+* URL
+* Method
+
+---
+
+### Step 3: Middleware runs
+
+Example:
+
+* Authentication check
+* Logging
+* Body parsing
+
+---
+
+### Step 4: Controller logic
+
+* Fetch data from DB
+* Process data
+
+---
+
+### Step 5: Response sent
+
+```
+res.json(data)
+```
+
+---
+
+## 10. Full Flow (Frontend → Backend → DB)
+
+1. User clicks button
+2. Frontend sends request (fetch/axios)
+3. Backend receives request
+4. Backend processes data
+5. Backend sends response
+6. Frontend updates UI
+
+---
+
+## 11. Simple Example (Login Flow)
+
+Frontend:
+
+```
+POST /login
+```
+
+Backend:
+
+* Check email/password
+* If correct → send token
+
+Browser:
+
+* Stores token
+* Sends token in future requests
+
+---
+
+## 12. Important Concepts You Must Know
+
+* Stateless nature of HTTP
+* Difference between GET and POST
+* How authentication works
+* Request → Response lifecycle
+* Middleware concept
+
+---
+
+## Final Quick Summary
+
+* HTTP = communication rules
+* Methods = action (GET, POST, etc.)
+* Status codes = result
+* Headers = extra info
+* Cookies = stored data in browser
+* Session/Token = authentication
+* Backend = processes request
