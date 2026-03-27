@@ -1,0 +1,39 @@
+1. WHAT IS CLASSIFICATION OF DATA MODELS?
+Classification of data models means grouping different ways of organizing data in a database.
+
+Explanation:
+Different data models define different ways to store and connect data. Each model has its own structure, advantages, and use cases.
+
+Main Types:
+1. Hierarchical Model
+2. Network Model
+3. Relational Model
+4. Object-Oriented Data Model
+
+
+2. HIERARCHICAL DATA MODEL
+--------------------------
+Hierarchical model stores data in a tree structure with parent-child relationships.
+
+Explanation:
+In this model, data is organized like a tree where each child node has only one parent. Data is accessed from the root downwards.
+
+Structure:
+Root → Parent → Child
+
+Example:
+Company
+  └── Department
+        └── Employee
+
+Real-life Example:
+A folder system in a computer.
+
+Advantages:
+- Simple structure
+- Fast access for hierarchical data
+
+Disadvantages:
+- Rigid structure
+- No multiple parent relationships
+
