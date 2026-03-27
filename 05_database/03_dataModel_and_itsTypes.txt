@@ -41,3 +41,30 @@ It defines how data elements connect with each other and how they will be stored
 Example:
 Designing a system where a student is linked to courses and teachers.
 
+
+5. TYPES OF DATA MODELS
+There are three main types of data models:
+
+a. High-Level (Conceptual) Data Model
+b. Record-Based Data Model
+c. Physical Data Model
+
+
+a. HIGH-LEVEL (CONCEPTUAL) DATA MODEL
+-------------------------------------
+High-level data model defines what data is stored and relationships without technical details.
+
+Explanation:
+This model focuses on understanding the real-world entities and how they relate to each other. It is used during the planning phase and is easy to understand.
+
+Example:
+Entities:
+- Student
+- Course
+
+Relationship:
+- Student enrolls in Course
+
+This is often represented using ER diagrams.
+
+
