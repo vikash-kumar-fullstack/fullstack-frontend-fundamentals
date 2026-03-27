@@ -1,0 +1,73 @@
+
+DATABASE BASICS
+
+
+1. WHAT IS DATA?
+Data = Raw facts or information.
+
+Simple meaning:
+Data is unprocessed and has no meaning until it is organized.
+
+Examples:
+- Vikash
+- 22
+- Delhi
+- 85
+
+These are just values → no context.
+
+When we combine them:
+Vikash, 22, Delhi → Now it becomes meaningful → Information
+
+
+------------------------------------------------------------
+
+
+2. WHAT IS DATABASE?
+---------------------
+Database = Organized collection of data.
+
+Simple meaning:
+Data stored in a structured way so that it can be easily:
+- Stored
+- Retrieved
+- Updated
+- Deleted
+
+Example (Student Table):
+
+Name     Age   Course
+----------------------
+Vikash   22    BTech
+Aman     21    BCA
+
+This structured data = Database
+
+
+------------------------------------------------------------
+
+
+3. WHAT IS DBMS?
+----------------
+DBMS = Database Management System
+
+Simple meaning:
+Software that helps us manage databases.
+
+Examples:
+- MySQL
+- MongoDB
+- PostgreSQL
+
+What DBMS does:
+- Stores data
+- Retrieves data
+- Updates data
+- Deletes data
+- Provides security
+- Handles multiple users
+
+Real-life example:
+When you login to Instagram or Amazon,
+DBMS is working in the backend.
+
