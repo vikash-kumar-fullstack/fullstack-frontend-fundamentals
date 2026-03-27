@@ -63,3 +63,40 @@ Types of Multi-User Systems:
 1. Concurrent Users
 2. Distributed Users (across locations)
 
+
+
+------------------------------------------------------------
+
+
+5. CONCURRENCY CONTROL (IMPORTANT CONCEPT)
+------------------------------------------
+Concurrency control ensures that multiple users can access the database without conflicts.
+
+Explanation:
+When many users try to update the same data, DBMS ensures consistency using techniques like locking and transactions.
+
+Example:
+Two users trying to book the same seat.
+DBMS ensures only one booking is successful.
+
+
+
+7. ADVANTAGES OF MULTI-USER DATABASE
+------------------------------------
+
+- Supports multiple users simultaneously
+- Efficient data sharing
+- Suitable for large applications
+- Better resource utilization
+
+
+------------------------------------------------------------
+
+
+8. DISADVANTAGES OF MULTI-USER DATABASE
+---------------------------------------
+
+- Complex design
+- Requires concurrency control
+- Higher cost
+- Needs strong security mechanisms
