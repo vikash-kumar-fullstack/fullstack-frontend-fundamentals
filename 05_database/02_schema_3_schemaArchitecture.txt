@@ -48,3 +48,111 @@ Meaning        Structure             Actual Data
 Change         Rare                  Frequent
 Example        Table Design          Table Records
 
+
+
+4. THREE-SCHEMA ARCHITECTURE
+-----------------------------
+This is a DBMS design model to separate different levels of data.
+
+It has 3 levels:
+
+1. External Level (View Level)
+2. Conceptual Level (Logical Level)
+3. Internal Level (Physical Level)
+
+5. EXTERNAL SCHEMA (VIEW LEVEL)
+-------------------------------
+This is what the user sees.
+
+Simple meaning:
+- Different users see different views of data.
+
+Example:
+- Student sees only marks
+- Admin sees full details
+- Teacher sees attendance
+
+Same database, different views.
+
+Purpose:
+- Security
+- Customization
+
+6. CONCEPTUAL SCHEMA (LOGICAL LEVEL)
+------------------------------------
+This is the overall structure of the database.
+
+Simple meaning:
+- Defines:
+  - Tables
+  - Relationships
+  - Constraints
+
+Example:
+Student table connected with Course table
+
+This level does NOT care about storage.
+
+
+7. INTERNAL SCHEMA (PHYSICAL LEVEL)
+-----------------------------------
+This is how data is actually stored in memory.
+
+Simple meaning:
+- Data storage
+- Indexing
+- File structure
+- Disk location
+
+Example:
+- How data is stored in disk blocks
+- How indexing is done
+
+User does NOT see this level.
+
+
+8. DIAGRAM (MENTAL MODEL)
+
+User → External Level (Views)
+          ↓
+       Conceptual Level (Design)
+          ↓
+       Internal Level (Storage)
+
+
+9. WHAT DOES THREE-SCHEMA ARCHITECTURE DO?
+-------------------------------------------
+
+It separates concerns:
+
+- User view is separate
+- Logical design is separate
+- Physical storage is separate
+
+This gives:
+- Flexibility
+- Security
+- Easy maintenance
+
+
+10. DATA INDEPENDENCE (VERY IMPORTANT)
+-----------------------------------------
+
+This architecture provides Data Independence.
+
+Types:
+
+1. Physical Data Independence
+   - Changes in internal level
+   - Do NOT affect conceptual level
+
+   Example:
+   Changing indexing → does not affect table structure
+
+2. Logical Data Independence
+   - Changes in conceptual level
+   - Do NOT affect external level
+
+   Example:
+   Adding new column → user view remains same
+
