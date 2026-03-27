@@ -100,3 +100,20 @@ DBMS ensures only one booking is successful.
 - Requires concurrency control
 - Higher cost
 - Needs strong security mechanisms
+
+
+
+------------------------------------------------------------
+
+
+9. COMPARISON: SINGLE USER VS MULTI USER
+----------------------------------------
+
+Feature            Single-User        Multi-User
+------------------------------------------------
+Users              One                Many
+Complexity         Low                High
+Scalability        Low                High
+Concurrency        Not required       Required
+Use Case           Personal use       Enterprise systems
+
