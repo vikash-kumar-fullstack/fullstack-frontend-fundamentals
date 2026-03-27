@@ -42,3 +42,23 @@ Disadvantages:
 
 
 ------------------------------------------------------------
+
+
+4. MULTI-USER DATABASE
+-----------------------
+A multi-user database allows multiple users to access and work on the database simultaneously.
+
+Explanation:
+Many users can perform operations like reading and writing data at the same time. DBMS manages concurrency to avoid conflicts.
+
+Example:
+- Banking system
+- E-commerce websites
+- Social media platforms
+
+Real-life Example:
+Multiple users placing orders on Amazon at the same time.
+
+Types of Multi-User Systems:
+1. Concurrent Users
+2. Distributed Users (across locations)
