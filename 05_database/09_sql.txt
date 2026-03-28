@@ -112,3 +112,72 @@ WHERE id = 1;
 
 ------------------------------------------------------------
 
+
+DQL COMMANDS:-
+
+10. SELECT
+Used to retrieve data.
+
+SELECT * FROM users;
+
+SELECT name, age FROM users;
+
+
+------------------------------------------------------------
+
+
+11. WHERE CLAUSE
+Used to filter data.
+
+SELECT * FROM users
+WHERE age > 18;
+
+
+------------------------------------------------------------
+
+
+12. OPERATORS
+Comparison:
+=, >, <, >=, <=, !=
+
+Logical:
+AND, OR, NOT
+
+Example:
+SELECT * FROM users
+WHERE age > 18 AND name = 'Vikash';
+
+
+------------------------------------------------------------
+
+
+13. ORDER BY
+Used to sort data.
+
+SELECT * FROM users
+ORDER BY age ASC;
+
+DESC → descending
+
+
+------------------------------------------------------------
+
+
+14. LIMIT
+Used to restrict number of rows.
+
+SELECT * FROM users
+LIMIT 5;
+
+
+------------------------------------------------------------
+
+
+15. DISTINCT
+Removes duplicate values.
+
+SELECT DISTINCT name FROM users;
+
+
+------------------------------------------------------------
+
