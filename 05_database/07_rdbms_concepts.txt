@@ -56,3 +56,61 @@ Name, Age, ID are columns in a table.
 
 
 ------------------------------------------------------------
+
+
+5. WHAT IS A PRIMARY KEY?
+A primary key uniquely identifies each row in a table.
+
+Explanation:
+- Must be unique
+- Cannot be NULL
+
+Example:
+User ID in Users table
+
+Why important:
+Ensures no duplicate records.
+
+
+------------------------------------------------------------
+
+
+6. WHAT IS A FOREIGN KEY?
+A foreign key is a column that creates a link between two tables.
+
+Explanation:
+It refers to the primary key of another table.
+
+Example:
+
+Users Table:
+ID = 1
+
+Orders Table:
+user_id = 1 → connects to Users table
+
+Why important:
+Maintains relationships between tables.
+
+
+------------------------------------------------------------
+
+
+7. WHAT IS A RELATIONSHIP?
+A relationship defines how two tables are connected.
+
+Types:
+
+1. One-to-One
+   One user → One profile
+
+2. One-to-Many
+   One user → Many orders
+
+3. Many-to-Many
+   Many students ↔ Many courses
+
+Explanation:
+Relationships are implemented using foreign keys.
+
+
