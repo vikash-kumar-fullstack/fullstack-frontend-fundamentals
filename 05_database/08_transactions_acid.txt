@@ -1,0 +1,66 @@
+1. WHAT IS A TRANSACTION?
+A transaction is a group of operations executed as a single unit.
+
+Explanation:
+A transaction ensures that either all operations are completed successfully or none of them are applied. It prevents partial updates in the database.
+
+Example:
+Bank Transfer:
+- Deduct 1000 from Account A
+- Add 1000 to Account B
+
+Both must succeed together.
+
+
+------------------------------------------------------------
+
+
+2. WHY TRANSACTIONS ARE IMPORTANT
+Transactions ensure data consistency and reliability in multi-user systems.
+
+Explanation:
+Without transactions, if a failure occurs in between operations, the database may go into an inconsistent state.
+
+Example:
+Money deducted but not credited → incorrect data
+
+
+------------------------------------------------------------
+
+
+3. STATES OF A TRANSACTION
+
+1. Active → Transaction is executing
+2. Partially Committed → Last operation executed
+3. Committed → Successfully saved
+4. Failed → Error occurred
+5. Aborted → Rolled back
+
+Explanation:
+A transaction moves through these states depending on success or failure.
+
+
+------------------------------------------------------------
+
+
+4. COMMIT AND ROLLBACK
+-----------------------
+
+COMMIT:
+Commit permanently saves the changes made by a transaction.
+
+ROLLBACK:
+Rollback cancels all changes and restores previous state.
+
+Example:
+
+START TRANSACTION
+Deduct 1000
+Add 1000
+COMMIT
+
+If error:
+ROLLBACK
+
+
+------------------------------------------------------------
