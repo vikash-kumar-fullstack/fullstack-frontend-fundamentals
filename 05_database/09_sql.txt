@@ -181,3 +181,52 @@ SELECT DISTINCT name FROM users;
 
 ------------------------------------------------------------
 
+
+AGGREGATE FUNCTIONS:-
+
+16. COUNT
+gives the total numbers of rows
+
+SELECT COUNT(*) FROM users;
+
+---------------------------------
+17. SUM
+sum the values of one column
+
+SELECT SUM(age) FROM users;
+-------------------------------
+
+18. AVG
+SELECT AVG(age) FROM users;
+
+19. MIN / MAX
+gives max and min values in the particular column
+
+SELECT MIN(age), MAX(age) FROM users;
+
+
+------------------------------------------------------------
+
+
+20. GROUP BY
+Groups data.
+
+SELECT age, COUNT(*)
+FROM users
+GROUP BY age;
+
+
+------------------------------------------------------------
+
+
+21. HAVING
+Used with GROUP BY.
+
+SELECT age, COUNT(*)
+FROM users
+GROUP BY age
+HAVING COUNT(*) > 1;
+
+
+------------------------------------------------------------
+
