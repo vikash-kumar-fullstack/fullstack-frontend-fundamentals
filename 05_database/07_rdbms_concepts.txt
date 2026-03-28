@@ -1,0 +1,58 @@
+1. WHAT IS RDBMS?
+RDBMS is a database system that stores data in the form of tables with relationships.
+
+Explanation:
+RDBMS organizes data into tables (relations) where each table consists of rows and columns. It allows linking tables using keys, making data structured and easy to manage.
+
+Examples:
+- MySQL
+- PostgreSQL
+- Oracle
+
+Real-life Example:
+Users table connected with Orders table in an e-commerce app.
+
+
+------------------------------------------------------------
+
+
+2. WHAT IS A TABLE?
+A table is a collection of related data organized in rows and columns.
+
+Explanation:
+Each table represents a specific entity like users, products, or orders. Tables are the basic building blocks of RDBMS.
+
+Example:
+
+Users Table:
+ID   Name   Age
+1    Vikash 22
+
+
+------------------------------------------------------------
+
+
+3. WHAT IS A ROW (TUPLE)?
+A row represents a single record in a table.
+
+Explanation:
+Each row contains complete information about one entity.
+
+Example:
+(1, Vikash, 22) → One user
+
+
+------------------------------------------------------------
+
+
+4. WHAT IS A COLUMN (ATTRIBUTE)?
+A column represents a property or field of data.
+
+Explanation:
+Each column stores a specific type of data.
+
+Example:
+Name, Age, ID are columns in a table.
+
+
+------------------------------------------------------------
