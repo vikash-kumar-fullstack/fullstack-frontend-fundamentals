@@ -138,3 +138,93 @@ Example:
 After successful payment,
 even if server crashes, order is saved.
 
+
+------------------------------------------------------------
+
+
+10. REAL-WORLD EXAMPLE (BANK SYSTEM)
+
+Transaction:
+Transfer 1000 from A to B
+
+Step 1: Deduct from A
+Step 2: Add to B
+
+ACID Applied:
+
+Atomicity:
+Both steps succeed or both fail
+
+Consistency:
+Total money remains same
+
+Isolation:
+Other users cannot see partial transfer
+
+Durability:
+Once done, data is permanently stored
+
+
+------------------------------------------------------------
+
+
+11. PROBLEMS WITHOUT ISOLATION
+
+1. Dirty Read
+   Reading uncommitted data
+
+2. Non-Repeatable Read
+   Same query gives different results
+
+3. Phantom Read
+   New rows appear during transaction
+
+Explanation:
+Isolation levels control these issues.
+
+
+------------------------------------------------------------
+
+
+12. ISOLATION LEVELS (BASIC IDEA)
+
+1. Read Uncommitted → Lowest safety
+2. Read Committed → Only committed data visible
+3. Repeatable Read → Same data during transaction
+4. Serializable → Highest safety
+
+Trade-off:
+Higher isolation → Lower performance
+
+
+------------------------------------------------------------
+
+
+13. HOW DBMS IMPLEMENTS TRANSACTIONS
+
+- Locking (Row/Table locks)
+- Logging (Write-Ahead Logging)
+- Concurrency Control
+- Recovery Mechanisms
+
+Explanation:
+DBMS internally manages transactions using these techniques.
+
+
+------------------------------------------------------------
+
+
+14. TRANSACTIONS IN FULL STACK DEVELOPMENT
+
+Example: Online Payment
+
+Flow:
+Frontend → Request payment
+Backend → Start transaction
+DB → Deduct balance + create order
+If success → COMMIT
+If error → ROLLBACK
+
+Why important:
+Prevents data corruption and ensures reliability.
+
