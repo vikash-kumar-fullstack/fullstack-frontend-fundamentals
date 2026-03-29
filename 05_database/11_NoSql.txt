@@ -175,3 +175,70 @@ Two users updating the same profile on different servers.
 
 
 ------------------------------------------------------------
+
+
+12. WHAT IS CONSISTENCY IN DISTRIBUTED SYSTEMS
+Consistency means all nodes see the same data at the same time.
+
+Explanation:
+When data is updated, every node should reflect the updated value.
+
+Example:
+If account balance becomes 500, every replica should show 500.
+
+
+------------------------------------------------------------
+
+
+13. WHAT IS AVAILABILITY
+Availability means the system always responds to requests.
+
+Explanation:
+Even if some nodes fail, the system continues serving requests.
+
+Example:
+If one server crashes, other servers still respond.
+
+
+------------------------------------------------------------
+
+
+14. WHAT IS PARTITION TOLERANCE
+Partition tolerance means the system continues working even if network partitions occur.
+
+Explanation:
+The system must continue functioning despite communication failures between nodes.
+
+
+------------------------------------------------------------
+
+
+15. CAP THEOREM
+CAP theorem states that a distributed system can guarantee only two of the following three properties at the same time:
+
+Consistency
+Availability
+Partition Tolerance
+
+
+------------------------------------------------------------
+
+
+16. WHY ONLY TWO OF THREE?
+In distributed systems, network failures are unavoidable.
+
+When a partition happens:
+The system must choose between consistency and availability.
+
+Option 1:
+Maintain consistency but stop responding to requests → availability lost.
+
+Option 2:
+Respond to requests but allow inconsistent data → consistency lost.
+
+Therefore:
+Only two of the three properties can be guaranteed simultaneously.
+
+
+------------------------------------------------------------
+
