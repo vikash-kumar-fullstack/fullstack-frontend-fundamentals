@@ -67,3 +67,85 @@ Column              Field
 
 
 ----------------------------------------------------------
+
+4. DATABASE
+A database is a container for collections.
+
+Example:
+EcommerceDB
+
+
+----------------------------------------------------------
+
+5. COLLECTION
+A collection is a group of MongoDB documents.
+
+Example:
+users collection
+
+
+----------------------------------------------------------
+
+6. DOCUMENT
+A document is a record stored in BSON format.
+
+Example:
+
+{
+  "_id": ObjectId("123"),
+  "name": "Vikash",
+  "age": 22
+}
+
+
+----------------------------------------------------------
+
+7. STARTING MONGODB SHELL
+mongosh
+
+This command opens MongoDB shell.
+
+
+----------------------------------------------------------
+
+8. CREATE DATABASE
+use companyDB
+
+Explanation:
+Switches to companyDB database.
+If it does not exist, MongoDB creates it automatically.
+
+
+----------------------------------------------------------
+
+9. CREATE COLLECTION
+db.createCollection("employees")
+
+
+10. INSERT DOCUMENT
+
+db.users.insertOne({
+   name: "Vikash",
+   age: 22,
+   city: "Delhi"
+})
+
+Explanation:
+Inserts one document into users collection.
+
+Output:
+
+{
+ acknowledged: true,
+ insertedId: ObjectId("654abc")
+}
+
+
+----------------------------------------------------------
+11. INSERT MULTIPLE DOCUMENTS
+----------------------------------------------------------
+db.users.insertMany([
+ {name:"Aman", age:23},
+ {name:"Ravi", age:24}
+])
+
