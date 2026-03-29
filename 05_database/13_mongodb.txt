@@ -217,3 +217,36 @@ Example:
 
 db.users.find({$or:[{age:22},{city:"Delhi"}]})
 
+
+----------------------------------------------------------
+17. UPDATE DOCUMENT
+----------------------------------------------------------
+db.users.updateOne(
+  {name:"Vikash"},            //condition to find 
+  {$set:{age:23}}             //actual updation
+)
+
+Explanation:
+Updates age field.
+
+
+----------------------------------------------------------
+18. UPDATE MULTIPLE DOCUMENTS
+----------------------------------------------------------
+db.users.updateMany(
+ {city:"Delhi"},
+ {$set:{country:"India"}}
+)
+
+
+----------------------------------------------------------
+19. DELETE DOCUMENT
+----------------------------------------------------------
+db.users.deleteOne({name:"Aman"})
+
+
+----------------------------------------------------------
+20. DELETE MULTIPLE DOCUMENTS
+----------------------------------------------------------
+db.users.deleteMany({age:{$lt:18}})
+
