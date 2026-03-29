@@ -78,3 +78,100 @@ In a cluster of 5 machines, each machine is called a node.
 
 
 ------------------------------------------------------------
+
+
+6. WHAT IS DATA PARTITIONING?
+Data partitioning is the process of splitting large data into smaller parts and distributing them across multiple nodes.
+
+Explanation:
+Instead of storing all data on one server, data is divided into partitions so different servers handle different data.
+
+Example:
+Server 1 → Users A–F
+Server 2 → Users G–M
+Server 3 → Users N–Z
+
+Benefit:
+Improves scalability and performance.
+
+
+------------------------------------------------------------
+
+
+7. NETWORK PARTITIONING (PARTITION FAILURE)
+Network partition occurs when communication between nodes in a distributed system is broken.
+
+Explanation:
+Sometimes network issues prevent nodes from communicating with each other. When this happens, the system becomes divided into separate groups that cannot coordinate.
+
+Example:
+Cluster with 5 nodes:
+2 nodes cannot communicate with the remaining 3 nodes.
+
+This creates a network partition.
+
+
+------------------------------------------------------------
+
+
+8. WHAT IS REPLICATION?
+Replication is the process of copying data across multiple servers.
+
+Explanation:
+Replication ensures that multiple nodes have the same copy of the data. This improves reliability and availability.
+
+Example:
+User data stored on Node A is also copied to Node B and Node C.
+
+
+------------------------------------------------------------
+
+
+9. TYPES OF REPLICATION
+
+Primary-Replica Replication:
+One server handles writes, and other servers copy the data.
+
+Example:
+Primary Node → Accepts writes
+Replica Nodes → Copy data
+
+Multi-Master Replication:
+Multiple servers can accept writes and replicate data to each other.
+
+Example:
+Two servers in different regions both accept updates.
+
+
+------------------------------------------------------------
+
+
+10. WHY REPLICATION IS IMPORTANT
+Replication improves system availability and fault tolerance.
+
+Benefits:
+- Data backup
+- High availability
+- Disaster recovery
+- Load distribution
+
+
+------------------------------------------------------------
+
+
+11. REPLICATION PROBLEMS
+
+Data Inconsistency:
+Different replicas may temporarily have different data.
+
+Replication Lag:
+Replica nodes receive updates later than the primary node.
+
+Conflict Resolution:
+When multiple nodes update the same data simultaneously.
+
+Example:
+Two users updating the same profile on different servers.
+
+
+------------------------------------------------------------
