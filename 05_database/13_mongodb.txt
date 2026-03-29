@@ -250,3 +250,148 @@ db.users.deleteOne({name:"Aman"})
 ----------------------------------------------------------
 db.users.deleteMany({age:{$lt:18}})
 
+
+----------------------------------------------------------
+21. SORT
+----------------------------------------------------------
+db.users.find().sort({age:1})
+
+1 = ascending
+-1 = descending
+
+
+----------------------------------------------------------
+22. LIMIT
+----------------------------------------------------------
+db.users.find().limit(5)
+
+
+----------------------------------------------------------
+23. COUNT
+----------------------------------------------------------
+db.users.countDocuments({age:22})
+or 
+db.users.find({age:22}).count()
+
+
+----------------------------------------------------------
+24. DISTINCT
+----------------------------------------------------------
+db.users.distinct("city")
+
+returns the array of city field value
+
+
+----------------------------------------------------------
+25. AGGREGATION FRAMEWORK
+----------------------------------------------------------
+Aggregation is used for complex data processing.
+
+Example:
+
+db.orders.aggregate([
+ { $group:{_id:"$product", total:{$sum:"$amount"}} }
+])
+
+
+----------------------------------------------------------
+26. INDEXING
+----------------------------------------------------------
+Index improves query performance.
+
+Explanation:
+Without index MongoDB scans the entire collection.
+
+Create Index:
+
+db.users.createIndex({name:1})
+
+
+----------------------------------------------------------
+27. COMPOUND INDEX
+----------------------------------------------------------
+db.users.createIndex({name:1, age:-1})
+
+
+----------------------------------------------------------
+28. VIEW INDEXES
+----------------------------------------------------------
+db.users.getIndexes()
+
+
+----------------------------------------------------------
+29. DROP INDEX
+----------------------------------------------------------
+db.users.dropIndex("name_1")
+
+
+----------------------------------------------------------
+30. TEXT INDEX
+----------------------------------------------------------
+db.articles.createIndex({content:"text"})
+
+
+----------------------------------------------------------
+31. EXPLAIN QUERY
+----------------------------------------------------------
+db.users.find({age:22}).explain("executionStats")
+
+Shows query execution plan.
+===>to analyse query
+return all the information of the query execution
+
+
+----------------------------------------------------------
+32. EMBEDDED DOCUMENTS
+----------------------------------------------------------
+
+{
+ name:"Vikash",
+ address:{
+    city:"Delhi",
+    pincode:110001
+ }
+}
+
+
+----------------------------------------------------------
+33. ARRAY DATA
+----------------------------------------------------------
+
+{
+ name:"Vikash",
+ skills:["JS","MongoDB","Python"]
+}
+
+
+----------------------------------------------------------
+34. UPSERT
+----------------------------------------------------------
+
+db.users.updateOne(
+ {name:"Rahul"},
+ {$set:{age:25}},
+ {upsert:true}
+)
+
+If document doesn't exist → insert.
+
+
+----------------------------------------------------------
+35. MONGODB IN FULL STACK APPLICATION
+----------------------------------------------------------
+
+Frontend → sends request
+
+Backend (Node.js/Express) → runs MongoDB query
+
+MongoDB → returns data
+
+
+Example:
+
+User Login
+
+db.users.find({email:"abc@gmail.com"})
+
+----------------------------------------------
