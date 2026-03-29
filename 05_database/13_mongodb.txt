@@ -188,3 +188,32 @@ c. db.users.find({}, {name:false})
 Explanation:
 Returns all fields except name of each Documents
 
+
+----------------------------------------------------------
+15. COMPARISON OPERATORS
+----------------------------------------------------------
+$gt  greater than
+$lt  less than
+$gte greater or equal
+$lte less or equal
+$eq  equal
+$ne  not equal
+$in  for checking in array
+$nin  for checking not in array
+
+Example:
+
+db.users.find({age:{$gt:21}})
+
+
+----------------------------------------------------------
+16. LOGICAL OPERATORS
+----------------------------------------------------------
+$and
+$or
+$not
+
+Example:
+
+db.users.find({$or:[{age:22},{city:"Delhi"}]})
+
