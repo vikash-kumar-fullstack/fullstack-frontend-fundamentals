@@ -1,0 +1,235 @@
+==========================================================
+CHALLENGES OF RDBMS (10_challenges_of_rdbms.txt)
+==========================================================
+
+
+1. WHAT ARE CHALLENGES OF RDBMS?
+Challenges of RDBMS are limitations faced when handling large-scale, modern, or unstructured data.
+
+Explanation:
+RDBMS works very well for structured and relational data, but when systems grow large (like social media, real-time apps), some problems arise.
+
+
+------------------------------------------------------------
+
+
+2. SCALABILITY ISSUES
+RDBMS faces difficulty in scaling, especially horizontal scaling.
+
+Explanation:
+Scaling means handling more users or more data.
+
+Types:
+
+1. Vertical Scaling (Scale Up)
+   Increase power of a single server (CPU, RAM).
+
+   Problem:
+   - Limited by hardware
+   - Expensive
+   - Not infinite
+
+2. Horizontal Scaling (Scale Out)
+   Add more servers.
+
+   Problem:
+   - Difficult in RDBMS
+   - Data consistency becomes complex
+   - Joins across servers are hard
+
+Example:
+Instagram cannot run on one server → needs distributed system.
+
+
+------------------------------------------------------------
+
+
+3. PERFORMANCE ISSUES
+RDBMS becomes slow with very large datasets and complex queries.
+
+Explanation:
+- Joins across multiple tables increase time
+- Index maintenance slows down writes
+- Large data scanning becomes expensive
+
+Example:
+Joining 5 large tables with millions of records → slow query
+
+
+------------------------------------------------------------
+
+
+4. RIGID SCHEMA (LESS FLEXIBILITY)
+RDBMS requires a fixed schema before storing data.
+
+Explanation:
+- Structure must be defined in advance
+- Changing schema is difficult and risky
+
+Example:
+Adding a new column in production database can break applications
+
+Problem:
+Not suitable for dynamic or evolving data
+
+
+------------------------------------------------------------
+
+
+5. DIFFICULT TO HANDLE UNSTRUCTURED DATA
+RDBMS is not efficient for unstructured or semi-structured data.
+
+Explanation:
+- Works best with tables (structured data)
+- Struggles with JSON, images, logs, etc.
+
+Example:
+Storing user posts, comments, images → complex in RDBMS
+
+
+------------------------------------------------------------
+
+
+6. COMPLEX QUERIES AND JOINS
+RDBMS heavily relies on joins for relationships.
+
+Explanation:
+- Joins increase complexity
+- Hard to optimize
+- Slows down performance at scale
+
+Example:
+Fetching user + orders + products + reviews → multiple joins
+
+
+------------------------------------------------------------
+
+
+7. HIGH COST
+RDBMS systems can be expensive to maintain and scale.
+
+Explanation:
+- Powerful servers required
+- Licensing cost (Oracle, etc.)
+- Maintenance cost
+
+Example:
+Scaling vertically requires costly hardware upgrades
+
+
+------------------------------------------------------------
+
+
+8. CONCURRENCY BOTTLENECK
+Handling too many simultaneous users can create bottlenecks.
+
+Explanation:
+- Locks are used to maintain consistency
+- Too many locks → slow performance
+
+Example:
+Thousands of users updating same table → delays
+
+
+------------------------------------------------------------
+
+
+9. LIMITED DISTRIBUTED SUPPORT
+RDBMS is not naturally designed for distributed systems.
+
+Explanation:
+- Hard to distribute data across multiple servers
+- Maintaining ACID across distributed systems is complex
+
+Example:
+Global applications need distributed databases
+
+
+------------------------------------------------------------
+
+
+10. WRITE PERFORMANCE ISSUES
+Frequent writes can slow down due to constraints and indexing.
+
+Explanation:
+- Index updates required
+- Constraints checking required
+
+Example:
+High-frequency logging system → not efficient in RDBMS
+
+
+------------------------------------------------------------
+
+
+11. SCHEMA MIGRATION COMPLEXITY
+Changing database structure in production is difficult.
+
+Explanation:
+- Requires downtime or migrations
+- Risk of data loss
+
+Example:
+Changing column type in large table → risky operation
+
+
+------------------------------------------------------------
+
+
+12. NOT IDEAL FOR BIG DATA & REAL-TIME SYSTEMS
+RDBMS struggles with massive and real-time data processing.
+
+Explanation:
+- Not designed for streaming data
+- Limited scalability for big data
+
+Example:
+Real-time analytics (like YouTube views update)
+
+
+------------------------------------------------------------
+
+
+13. WHY NOSQL EMERGED (IMPORTANT INTERVIEW POINT)
+NoSQL databases were introduced to overcome RDBMS limitations.
+
+Explanation:
+- Better horizontal scaling
+- Flexible schema
+- Handles unstructured data
+- High performance for large-scale systems
+
+Examples:
+- MongoDB
+- Cassandra
+- Redis
+
+
+------------------------------------------------------------
+
+
+FINAL UNDERSTANDING:-
+
+RDBMS is best for:
+- Structured data
+- Strong consistency
+- Complex relationships
+
+But struggles with:
+- Scalability
+- Flexibility
+- Big data
+
+
+------------------------------------------------------------
+
+
+RDBMS:
+- Banking systems
+- ERP systems
+
+NoSQL:
+- Social media apps
+- Real-time analytics
+- Big data systems
+

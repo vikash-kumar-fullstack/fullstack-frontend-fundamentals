@@ -1,0 +1,54 @@
+1. WHAT IS NOSQL?
+NoSQL is a class of databases designed to handle large-scale, distributed, and flexible data storage.
+
+Explanation:
+Unlike traditional relational databases, NoSQL databases do not rely on fixed table structures and rigid schemas. They are designed to handle massive volumes of data, high user traffic, and distributed environments across many machines.
+
+Key Idea:
+NoSQL focuses on scalability, flexibility, and performance rather than strict relational structure.
+
+Examples:
+MongoDB
+Cassandra
+Redis
+DynamoDB
+
+Real-world Example:
+Social media platforms store huge volumes of posts, likes, and comments. This type of rapidly growing and flexible data fits better in NoSQL databases.
+
+
+------------------------------------------------------------
+
+
+2. WHY NOSQL WAS INTRODUCED
+NoSQL was introduced to solve the limitations of traditional relational databases at large scale.
+
+Problems with RDBMS at scale:
+- Difficult horizontal scaling
+- Rigid schema
+- Performance issues with large joins
+- Handling massive distributed systems
+
+Example:
+Facebook or Instagram cannot store billions of user interactions efficiently in a single relational server.
+
+
+------------------------------------------------------------
+
+
+3. WHAT IS A DISTRIBUTED SYSTEM?
+A distributed system is a group of multiple computers working together as a single system.
+
+Explanation:
+Instead of storing data on one machine, distributed systems store data across many machines connected through a network.
+
+Benefits:
+- Higher scalability
+- Better reliability
+- Fault tolerance
+
+Example:
+Instead of one server storing all user data, multiple servers store different portions of the data.
+
+
+------------------------------------------------------------
