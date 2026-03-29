@@ -56,3 +56,88 @@ Challenges:
 
 
 ------------------------------------------------------------
+
+
+3. DOCUMENT DATABASE
+A document database stores data in the form of documents.
+
+Explanation:
+Documents usually use JSON-like structures where data is stored as key-value pairs inside a document. Each document can have a different structure.
+
+Structure Example:
+
+{
+  "name": "Vikash",
+  "age": 22,
+  "skills": ["JavaScript", "Python"]
+}
+
+
+Examples of Document Databases:
+MongoDB
+CouchDB
+Firestore
+
+
+Use Cases:
+- Web applications
+- Content management systems
+- E-commerce product catalogs
+- User profile systems
+
+
+Advantages:
+- Flexible schema
+- Easy to store complex objects
+- Natural mapping with programming objects
+
+
+Challenges:
+- Joins are limited compared to relational databases
+- Data duplication may occur
+- Maintaining consistency can be harder
+
+
+------------------------------------------------------------
+
+
+4. COLUMN-FAMILY DATABASE
+Column-family databases store data in column groups rather than rows.
+
+Explanation:
+Instead of storing all data in rows like relational databases, these databases organize data by columns, allowing efficient storage and retrieval for large datasets.
+
+Structure Example:
+
+UserID | Name | Email | Age
+
+Data is stored in column families rather than entire rows.
+
+
+Examples of Column-Family Databases:
+Apache Cassandra
+HBase
+Google Bigtable
+
+
+Use Cases:
+- Big data systems
+- Analytics platforms
+- Logging systems
+- IoT data storage
+
+
+Advantages:
+- High scalability
+- Efficient for large datasets
+- Optimized for distributed systems
+
+
+Challenges:
+- Complex data modeling
+- Limited query flexibility
+- Harder to design compared to relational databases
+
+
+------------------------------------------------------------
+
