@@ -52,3 +52,29 @@ Instead of one server storing all user data, multiple servers store different po
 
 
 ------------------------------------------------------------
+
+
+4. WHAT IS A CLUSTER?
+A cluster is a group of servers (nodes) that work together to manage data and handle requests.
+
+Explanation:
+Each server in the cluster contributes computing power and storage. If one node fails, other nodes can continue working.
+
+Example:
+A database cluster may contain 10 servers storing different parts of the data.
+
+
+------------------------------------------------------------
+
+
+5. WHAT IS A NODE?
+A node is an individual server within a distributed system or cluster.
+
+Explanation:
+Each node stores part of the data and processes requests from users.
+
+Example:
+In a cluster of 5 machines, each machine is called a node.
+
+
+------------------------------------------------------------
