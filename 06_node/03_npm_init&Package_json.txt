@@ -1,0 +1,67 @@
+----------------------------------------------------------
+1. WHAT IS NPM
+----------------------------------------------------------
+
+NPM (Node Package Manager) is the default package manager for Node.js.
+
+Explanation:
+It allows developers to install, manage, and share reusable libraries called packages.
+
+Functions of NPM:
+
+Install libraries
+Manage project dependencies
+Run scripts
+Publish packages
+
+Example:
+
+npm install express
+
+
+----------------------------------------------------------
+2. WHAT IS A PACKAGE
+----------------------------------------------------------
+
+A package is a reusable piece of code distributed through npm.
+It is a collection of modules bundled together and distributed using npm.
+
+Examples:
+
+express → web framework
+mongoose → MongoDB ODM
+lodash → utility library
+dotenv → environment variables
+
+Packages allow developers to avoid writing everything from scratch.
+
+
+----------------------------------------------------------
+3. WHAT IS npm init
+----------------------------------------------------------
+
+npm init is used to create a new Node.js project.
+
+Command:
+
+npm init
+
+This command creates a package.json file.
+
+
+Example interactive steps:
+
+package name
+version
+description
+entry point
+author
+license
+
+
+Quick initialization:
+
+npm init -y
+
+This automatically generates package.json with default values.
+
