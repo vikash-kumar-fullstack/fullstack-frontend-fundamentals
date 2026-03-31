@@ -198,3 +198,96 @@ Examples:
 
 These operations run in background threads while main thread handles other tasks.
 
+
+----------------------------------------------------------
+12. NODE.JS MODULE SYSTEM
+----------------------------------------------------------
+
+Node.js uses modules to organize code.
+
+A module is a reusable block of code.
+
+Example:
+
+const fs = require("fs");
+
+Here:
+fs is a built-in module for file operations.
+
+
+Types of modules:
+
+1. Core modules
+2. Local modules
+3. Third-party modules
+
+
+----------------------------------------------------------
+13. CORE MODULES
+----------------------------------------------------------
+
+Core modules are built into Node.js.
+
+Examples:
+
+fs → file system
+http → web server
+path → file paths
+os → operating system info
+
+
+----------------------------------------------------------
+14. LOCAL MODULES
+----------------------------------------------------------
+
+Local modules are modules created by developers.
+
+Example:
+
+math.js
+
+exports.add = (a,b) => a+b
+
+
+----------------------------------------------------------
+15. THIRD PARTY MODULES
+----------------------------------------------------------
+
+Third-party modules are installed using npm.
+
+Example:
+
+express
+mongoose
+dotenv
+
+
+----------------------------------------------------------
+16. NPM (NODE PACKAGE MANAGER)
+----------------------------------------------------------
+
+NPM is the package manager for Node.js.
+
+Functions:
+- Install libraries
+- Manage dependencies
+- Run scripts
+
+Example:
+
+npm install express
+
+
+----------------------------------------------------------
+17. GLOBAL OBJECTS
+----------------------------------------------------------
+
+Node.js provides global objects accessible everywhere.
+
+Examples:
+
+global
+process
+__dirname
+__filename
+
