@@ -291,3 +291,41 @@ process
 __dirname
 __filename
 
+
+----------------------------------------------------------
+18. ADVANTAGES OF NODE.JS
+----------------------------------------------------------
+
+High performance
+Non-blocking architecture
+Scalable applications
+Large ecosystem (npm)
+JavaScript everywhere
+
+
+----------------------------------------------------------
+19. LIMITATIONS OF NODE.JS
+----------------------------------------------------------
+
+CPU intensive tasks are slow
+Single thread limitations
+Callback complexity
+
+
+----------------------------------------------------------
+20. USE CASES OF NODE.JS
+----------------------------------------------------------
+
+Real-time applications
+Chat applications
+Streaming services
+REST APIs
+Microservices
+
+
+Example Systems:
+
+Netflix
+LinkedIn
+PayPal
+
