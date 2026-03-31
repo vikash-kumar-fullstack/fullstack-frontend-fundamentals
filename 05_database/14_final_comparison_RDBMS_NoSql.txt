@@ -1,0 +1,216 @@
+1. BASIC IDEA
+----------------------------------------------------------
+
+SQL Database:
+SQL databases store data in structured tables with predefined schema.
+
+MongoDB:
+MongoDB stores data as flexible JSON-like documents.
+
+
+----------------------------------------------------------
+2. DATA STRUCTURE
+----------------------------------------------------------
+
+SQL Structure
+
+Database
+   → Tables
+       → Rows
+           → Columns
+
+
+MongoDB Structure
+
+Database
+   → Collections
+       → Documents
+           → Fields
+
+
+Example SQL Table
+
+Users
+
+ID | Name | Age
+----------------
+1  | Vikash | 22
+
+
+Example MongoDB Document
+
+{
+  "_id": 1,
+  "name": "Vikash",
+  "age": 22
+}
+
+
+----------------------------------------------------------
+3. SCHEMA DESIGN
+----------------------------------------------------------
+
+SQL:
+Fixed schema.
+
+Example:
+
+CREATE TABLE users(
+ id INT,
+ name VARCHAR(50),
+ age INT
+);
+
+
+MongoDB:
+Flexible schema.
+
+Example:
+
+{ name:"Vikash", age:22 }
+
+{ name:"Aman", age:23, city:"Delhi" }
+
+
+----------------------------------------------------------
+4. RELATIONSHIPS
+----------------------------------------------------------
+
+SQL:
+Relationships managed using foreign keys.
+
+Example
+
+Orders.user_id → Users.id
+
+
+MongoDB:
+Relationships managed using
+
+1. Embedded documents
+2. Referencing
+
+
+Example Embedded
+
+{
+ name:"Vikash",
+ orders:[
+   {product:"Laptop"},
+   {product:"Mouse"}
+ ]
+}
+
+
+----------------------------------------------------------
+5. SCALABILITY
+----------------------------------------------------------
+
+SQL:
+Primarily vertical scaling.
+
+Meaning:
+Upgrade hardware (CPU/RAM).
+
+Limit:
+Hardware limits.
+
+
+MongoDB:
+Horizontal scaling.
+
+Meaning:
+Add more servers using sharding.
+
+
+----------------------------------------------------------
+6. QUERY LANGUAGE
+----------------------------------------------------------
+
+SQL
+
+SELECT * FROM users WHERE age > 20;
+
+
+MongoDB
+
+db.users.find({age:{$gt:20}})
+
+
+----------------------------------------------------------
+7. JOINS
+----------------------------------------------------------
+
+SQL:
+Supports complex joins.
+
+MongoDB:
+Uses aggregation with $lookup.
+
+
+----------------------------------------------------------
+8. TRANSACTIONS
+----------------------------------------------------------
+
+SQL:
+Strong ACID transactions.
+
+MongoDB:
+Supports transactions but often designed for distributed availability.
+
+
+----------------------------------------------------------
+9. PERFORMANCE
+----------------------------------------------------------
+
+SQL:
+Efficient for structured relational queries.
+
+MongoDB:
+Efficient for large-scale distributed data.
+
+
+----------------------------------------------------------
+10. DATA MODELING
+----------------------------------------------------------
+
+SQL:
+Normalized data model.
+
+MongoDB:
+Denormalized model often used.
+
+
+----------------------------------------------------------
+11. INDEXING
+----------------------------------------------------------
+
+SQL
+
+CREATE INDEX idx_name ON users(name);
+
+
+MongoDB
+
+db.users.createIndex({name:1})
+
+
+----------------------------------------------------------
+12. USE CASES
+----------------------------------------------------------
+
+SQL Best For
+
+Banking
+Finance
+ERP systems
+Inventory systems
+
+
+MongoDB Best For
+
+Social media
+Content platforms
+Product catalogs
+Real-time analytics
+
