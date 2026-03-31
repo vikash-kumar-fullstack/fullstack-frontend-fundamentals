@@ -157,6 +157,10 @@ nodemon
 eslint
 jest
 
+ESLint: A static code analysis (linting) tool that checks JavaScript code for errors, bad practices, and style issues. It helps maintain consistent and high-quality code during development.
+
+Jest: A JavaScript testing framework used to write and run automated tests to verify that application code works correctly and behaves as expected.
+
 Installation command:
 
 npm install nodemon --save-dev
