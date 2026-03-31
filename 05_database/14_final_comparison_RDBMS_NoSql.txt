@@ -214,3 +214,128 @@ Content platforms
 Product catalogs
 Real-time analytics
 
+
+----------------------------------------------------------
+13. ACID PROPERTIES (RDBMS)
+----------------------------------------------------------
+
+ACID ensures reliable transactions in relational databases.
+
+ACID stands for
+
+Atomicity
+Consistency
+Isolation
+Durability
+
+
+----------------------------------------------------------
+ATOMICITY
+----------------------------------------------------------
+
+Definition:
+A transaction is either fully completed or not executed at all.
+done using undo logs
+
+Example:
+
+Bank transfer
+
+Step 1: deduct money
+Step 2: credit money
+
+If step 2 fails → rollback step 1.
+
+
+----------------------------------------------------------
+CONSISTENCY
+----------------------------------------------------------
+
+Definition:
+The database must always remain in a valid state before and after a transaction.
+done using double write buffer
+
+Example:
+
+Account balance rule must remain correct after transaction.
+
+
+----------------------------------------------------------
+ISOLATION
+----------------------------------------------------------
+
+Definition:
+Multiple transactions should not interfere with each other.
+using serializability and  using locks
+
+Example:
+
+Two users booking same seat.
+
+Database ensures only one succeeds.
+
+
+----------------------------------------------------------
+DURABILITY
+----------------------------------------------------------
+
+Definition:
+Once a transaction is committed, it remains permanently stored.
+using redo logs
+
+Example:
+
+Even if server crashes, committed data remains saved.
+
+
+----------------------------------------------------------
+14. BASE PRINCIPLES (NOSQL)
+----------------------------------------------------------
+
+Most NoSQL systems follow BASE instead of ACID.
+
+BASE stands for
+
+Basically Available
+Soft State
+Eventual Consistency
+
+
+----------------------------------------------------------
+BASICALLY AVAILABLE
+----------------------------------------------------------
+
+System always responds to requests even if some nodes fail.
+
+Example:
+
+User can still access application despite server failures.
+
+
+----------------------------------------------------------
+SOFT STATE
+----------------------------------------------------------
+
+System state may change over time even without new input.
+When data is updated:
+
+1.One node receives the update
+2.Other nodes receive the update later
+3.During that time, nodes may have different values
+
+That temporary difference is the Soft State.
+
+Explanation:
+Data may temporarily be inconsistent across replicas.
+
+
+----------------------------------------------------------
+EVENTUAL CONSISTENCY
+----------------------------------------------------------
+
+All nodes will eventually become consistent after updates propagate.
+
+Example:
+
+Social media likes appearing after a short delay.
+
