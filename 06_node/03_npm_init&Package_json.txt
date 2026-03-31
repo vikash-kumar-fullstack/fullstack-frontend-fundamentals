@@ -168,3 +168,67 @@ Example:
  "nodemon": "^3.0.0"
 }
 
+
+----------------------------------------------------------
+8. node_modules
+----------------------------------------------------------
+
+node_modules is the folder where npm installs packages.
+
+Explanation:
+
+When you install a package:
+
+npm install express
+
+The express package is downloaded into node_modules.
+
+
+Important point:
+
+node_modules should NOT be pushed to GitHub.
+
+
+Reason:
+It can be recreated using package.json.
+
+
+----------------------------------------------------------
+9. package-lock.json
+----------------------------------------------------------
+
+package-lock.json records the exact versions of installed packages.
+
+Purpose:
+
+Ensure consistent installations across environments.
+
+
+Example:
+
+If two developers run:
+
+npm install
+
+Both will get the exact same dependency versions.
+
+
+----------------------------------------------------------
+10. SCRIPTS IN package.json
+----------------------------------------------------------
+
+Scripts allow running commands using npm.
+
+Example:
+
+"scripts": {
+ "start": "node index.js",
+ "dev": "nodemon index.js"
+}
+
+
+Running scripts:
+
+npm start
+npm run dev
+
