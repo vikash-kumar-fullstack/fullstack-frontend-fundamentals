@@ -157,3 +157,69 @@ Output:
 Start
 End
 Promise
+
+
+
+----------------------------------------------------------
+8. NODE.JS EVENT LOOP PHASES
+----------------------------------------------------------
+
+The event loop has multiple phases.
+
+1. Timers
+2. Pending callbacks
+3. Idle/prepare
+4. Poll
+5. Check
+6. Close callbacks
+
+
+----------------------------------------------------------
+9. TIMERS PHASE
+----------------------------------------------------------
+
+Executes callbacks scheduled by setTimeout and setInterval.
+
+Example:
+
+setTimeout(()=>{
+ console.log("Timer executed")
+},1000)
+
+
+----------------------------------------------------------
+10. POLL PHASE
+----------------------------------------------------------
+
+Handles incoming I/O events.
+
+Examples:
+
+File system operations
+Database queries
+Network requests
+
+
+----------------------------------------------------------
+11. CHECK PHASE
+----------------------------------------------------------
+
+Handles callbacks scheduled by setImmediate.
+
+Example:
+
+setImmediate(()=>{
+ console.log("Immediate callback")
+})
+
+
+----------------------------------------------------------
+12. CLOSE CALLBACK PHASE
+----------------------------------------------------------
+
+Handles closing events.
+
+Example:
+
+socket.on("close", ()=>{})
+
