@@ -60,3 +60,97 @@ The V8 engine converts JavaScript code into machine code so the computer can exe
 Example:
 JavaScript code → V8 engine → machine code → execution
 
+
+----------------------------------------------------------
+5. NODE.JS ARCHITECTURE
+----------------------------------------------------------
+
+Node.js uses an event-driven non-blocking architecture.
+
+Main Components:
+
+Application Code
+↓
+Node.js APIs
+↓
+Event Loop
+↓
+Thread Pool
+↓
+Operating System
+
+
+----------------------------------------------------------
+6. EVENT DRIVEN ARCHITECTURE
+----------------------------------------------------------
+
+Node.js works based on events.
+
+Definition:
+An event is an action or occurrence detected by the program.
+
+Examples:
+- HTTP request
+- File read
+- Database query
+
+When an event occurs, a callback function executes.
+
+
+Example:
+
+User request → event triggered → server processes request → response sent
+
+
+----------------------------------------------------------
+7. SYNCHRONOUS VS ASYNCHRONOUS PROGRAMMING
+----------------------------------------------------------
+
+Synchronous Programming
+
+Tasks execute one after another.
+
+Example:
+
+Task1
+Task2
+Task3
+
+Next task waits until previous task finishes.
+
+
+Asynchronous Programming
+
+Tasks execute without blocking other operations.
+
+Example:
+
+Task1 started
+Task2 started
+Task3 started
+
+Tasks complete independently.
+
+
+----------------------------------------------------------
+8. BLOCKING VS NON-BLOCKING I/O
+----------------------------------------------------------
+
+Blocking I/O
+
+Program waits until operation finishes.
+
+Example:
+Reading large file blocks server.
+
+
+Non-blocking I/O
+
+Server continues processing other requests.
+
+Example:
+While file loads, server processes another request.
+
+
+Node.js uses NON-BLOCKING I/O.
+
