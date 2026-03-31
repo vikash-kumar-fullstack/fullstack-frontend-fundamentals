@@ -65,3 +65,106 @@ npm init -y
 
 This automatically generates package.json with default values.
 
+
+----------------------------------------------------------
+4. WHAT IS package.json
+----------------------------------------------------------
+
+package.json is the configuration file of a Node.js project.
+
+Explanation:
+It stores metadata about the project and lists all dependencies required to run the application.
+
+Example structure:
+
+{
+ "name": "my-app",
+ "version": "1.0.0",
+ "description": "Node project",
+ "main": "index.js",
+ "scripts": {
+   "start": "node index.js"
+ },
+ "dependencies": {
+   "express": "^4.18.2"
+ }
+}
+
+
+----------------------------------------------------------
+5. IMPORTANT FIELDS IN package.json
+----------------------------------------------------------
+
+name
+Name of the project.
+
+version
+Current version of the application.
+
+description
+Short explanation of the project.
+
+main
+Entry file of the application.
+
+Example:
+index.js
+
+keyword
+used in search engine optimisation
+
+scripts
+Commands that can be executed using npm.
+
+
+dependencies
+Libraries required to run the application.
+
+
+devDependencies
+Libraries required only during development.
+
+
+----------------------------------------------------------
+6. DEPENDENCIES
+----------------------------------------------------------
+
+Dependencies are packages required for the application to run.
+
+Example:
+
+npm install express
+
+This adds express to dependencies.
+
+
+package.json:
+
+"dependencies": {
+ "express": "^4.18.2"
+}
+
+
+----------------------------------------------------------
+7. DEV DEPENDENCIES
+----------------------------------------------------------
+
+Dev dependencies are packages used only during development.
+
+Examples:
+
+nodemon
+eslint
+jest
+
+Installation command:
+
+npm install nodemon --save-dev
+
+
+Example:
+
+"devDependencies": {
+ "nodemon": "^3.0.0"
+}
+
