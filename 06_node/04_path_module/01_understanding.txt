@@ -43,3 +43,112 @@ base : app.js
 name : app
 ext  : .js
 
+
+----------------------------------------------------------
+4. path.basename()
+----------------------------------------------------------
+
+Definition:
+Returns the last portion of a path (the file name).
+
+Syntax
+
+path.basename(path, ext)
+
+Example
+
+const path = require("path")
+
+const file = path.basename("D:/nodejs/html/js/app.js")
+
+console.log(file)
+
+Output
+
+app.js
+
+Removing extension
+
+path.basename("app.js", ".js")
+
+Output
+
+app
+
+
+----------------------------------------------------------
+5. path.dirname()
+----------------------------------------------------------
+
+Definition:
+Returns the directory name of a path.
+
+Example
+
+path.dirname("D:/nodejs/html/js/app.js")
+
+Output
+
+D:/nodejs/html/js
+
+
+----------------------------------------------------------
+6. path.extname()
+----------------------------------------------------------
+
+Definition:
+Returns the file extension.
+
+Example
+
+path.extname("app.js")
+
+Output
+
+.js
+
+
+----------------------------------------------------------
+7. path.parse()
+----------------------------------------------------------
+
+Definition:
+Returns an object containing all parts of a path.
+
+Example
+
+const result = path.parse("D:/nodejs/html/js/app.js")
+
+console.log(result)
+
+Output
+
+{
+ root: 'D:/',
+ dir: 'D:/nodejs/html/js',
+ base: 'app.js',
+ ext: '.js',
+ name: 'app'
+}
+
+
+----------------------------------------------------------
+8. path.format()
+----------------------------------------------------------
+
+Definition:
+Creates a path string from a path object.
+
+Example
+
+const obj = {
+ dir: "D:/nodejs/html/js",
+ base: "app.js"
+}
+
+console.log(path.format(obj))
+
+Output
+
+D:/nodejs/html/js/app.js
+
