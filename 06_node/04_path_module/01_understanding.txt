@@ -255,3 +255,76 @@ path.resolve("folder","app.js")
 Output
 
 C:\project\folder\app.js
+
+
+----------------------------------------------------------
+14. IMPORTANT PATH SYMBOLS
+----------------------------------------------------------
+
+These symbols are commonly used in Node.js.
+
+
+----------------------------------------------------------
+/
+----------------------------------------------------------
+
+Represents the root directory.
+
+Example
+
+/Users/app.js
+
+Meaning:
+Starting from the root folder.
+
+
+----------------------------------------------------------
+./
+----------------------------------------------------------
+
+Represents the current directory.
+
+Example
+
+./app.js
+
+Meaning:
+The file is located in the current folder.
+
+
+Example structure
+
+project
+ ├── app.js
+ └── server.js
+
+Inside server.js
+
+require("./app")
+
+
+----------------------------------------------------------
+../
+----------------------------------------------------------
+
+Represents the parent directory.
+
+Example
+
+../app.js
+
+Meaning:
+Go one folder up.
+
+
+Example structure
+
+project
+ ├── config
+ │     └── db.js
+ └── server.js
+
+Inside db.js
+
+require("../server")
+
