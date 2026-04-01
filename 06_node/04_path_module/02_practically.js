@@ -68,3 +68,56 @@ const messyPath = "/users/nodejs/../app.js"
 console.log("Before:", messyPath)
 console.log("After:", path.normalize(messyPath))
 
+
+// --------------------------------------------------
+// isAbsolute()
+// --------------------------------------------------
+console.log("\n8. isAbsolute()")
+
+console.log("Is Absolute (/users/app.js):", path.isAbsolute("/users/app.js"))
+console.log("Is Absolute (app.js):", path.isAbsolute("app.js"))
+
+
+// --------------------------------------------------
+// relative()
+// --------------------------------------------------
+console.log("\n9. relative()")
+
+const relativePath = path.relative("/data/test", "/data/app")
+console.log("Relative Path:", relativePath)
+
+
+// --------------------------------------------------
+// resolve()
+// --------------------------------------------------
+console.log("\n10. resolve()")
+
+const absolutePath = path.resolve("folder", "app.js")
+console.log("Resolved Absolute Path:", absolutePath)
+
+
+// --------------------------------------------------
+// __dirname and __filename
+// --------------------------------------------------
+console.log("\n11. __dirname and __filename")
+
+console.log("Current Directory:", __dirname)
+console.log("Current File:", __filename)
+
+
+// --------------------------------------------------
+// Demonstrating ./ and ../
+// --------------------------------------------------
+console.log("\n12. Understanding ./ and ../")
+
+console.log("./ means current folder")
+console.log("../ means parent folder")
+
+const example1 = path.resolve("./app.js")
+const example2 = path.resolve("../app.js")
+
+console.log("Example ./ :", example1)
+console.log("Example ../ :", example2)
+
+
+console.log("\n============== END OF DEMO ==============")
