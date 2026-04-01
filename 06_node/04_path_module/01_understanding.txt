@@ -152,3 +152,106 @@ Output
 
 D:/nodejs/html/js/app.js
 
+
+----------------------------------------------------------
+9. path.isAbsolute()
+----------------------------------------------------------
+
+Definition:
+Checks if a path is absolute.
+
+Absolute path means the complete path from the root.
+
+Example
+
+path.isAbsolute("/users/app.js")
+
+Output
+
+true
+
+
+Example
+
+path.isAbsolute("app.js")
+
+Output
+
+false
+
+
+----------------------------------------------------------
+10. path.join()
+----------------------------------------------------------
+
+Definition:
+Joins multiple path segments into a single path.
+
+Example
+
+path.join("users","nodejs","app.js")
+
+Output (Linux/Mac)
+
+users/nodejs/app.js
+
+Output (Windows)
+
+users\nodejs\app.js
+
+
+----------------------------------------------------------
+11. path.normalize()
+----------------------------------------------------------
+
+Definition:
+Normalizes a path by resolving ".." and "." segments.
+
+Example
+
+path.normalize("/users/nodejs/../app.js")
+
+Output
+
+/users/app.js
+
+
+----------------------------------------------------------
+12. path.relative()
+----------------------------------------------------------
+
+Definition:
+Returns the relative path from one location to another.
+
+Example
+
+path.relative("/data/test","/data/app")
+
+Output
+
+../app
+
+
+----------------------------------------------------------
+13. path.resolve()
+----------------------------------------------------------
+
+Definition:
+Resolves a sequence of paths into an absolute path.
+
+Example
+
+path.resolve("app.js")
+
+Output
+
+C:\project\app.js
+
+
+Example
+
+path.resolve("folder","app.js")
+
+Output
+
+C:\project\folder\app.js
