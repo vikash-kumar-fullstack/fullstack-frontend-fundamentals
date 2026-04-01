@@ -1,7 +1,6 @@
 // Import path module
 const path = require("path")
 
-console.log("============== NODE PATH MODULE DEMO ==============\n")
 
 // Example path
 const filePath = "D:/nodejs/html/js/app.js"
@@ -118,6 +117,3 @@ const example2 = path.resolve("../app.js")
 
 console.log("Example ./ :", example1)
 console.log("Example ../ :", example2)
-
-
-console.log("\n============== END OF DEMO ==============")
