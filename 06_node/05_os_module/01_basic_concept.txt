@@ -131,3 +131,88 @@ Example Output
 
 C:\Users\vikash
 
+
+----------------------------------------------------------
+10. os.uptime()
+----------------------------------------------------------
+
+Definition:
+Returns the system uptime in seconds.
+
+Example
+
+os.uptime()
+
+
+----------------------------------------------------------
+11. os.userInfo()
+----------------------------------------------------------
+
+Definition:
+Returns information about the current logged-in user.
+
+Example
+
+os.userInfo()
+
+Output Example
+
+{
+ username: "vikash",
+ homedir: "C:\\Users\\vikash"
+}
+
+
+----------------------------------------------------------
+12. os.networkInterfaces()
+----------------------------------------------------------
+
+Definition:
+Returns network interface information.
+
+Example
+
+os.networkInterfaces()
+
+Shows IP addresses and network details.
+
+
+----------------------------------------------------------
+13. os.tmpdir()
+----------------------------------------------------------
+
+Definition:
+Returns the default temporary directory.
+
+Example
+
+os.tmpdir()
+
+
+----------------------------------------------------------
+14. COMMON INTERVIEW QUESTIONS
+----------------------------------------------------------
+
+Q1: What is the Node.js OS module?
+
+Answer:
+The OS module is a built-in Node.js module that provides information about the operating system such as CPU, memory, platform, and system uptime.
+
+
+Q2: How do you check CPU information in Node.js?
+
+Answer:
+Using os.cpus()
+
+
+Q3: How do you check total memory?
+
+Answer:
+Using os.totalmem()
+
+
+Q4: How do you check the platform of the system?
+
+Answer:
+Using os.platform()
+
