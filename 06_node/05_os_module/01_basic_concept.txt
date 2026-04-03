@@ -38,3 +38,96 @@ win32   → Windows
 linux   → Linux
 darwin  → macOS
 
+
+----------------------------------------------------------
+4. os.arch()
+----------------------------------------------------------
+
+Definition:
+Returns the CPU architecture of the operating system.
+
+Example
+
+os.arch()
+
+Output Example
+
+x64
+
+
+----------------------------------------------------------
+5. os.cpus()
+----------------------------------------------------------
+
+Definition:
+Returns information about the CPU cores.
+
+Example
+
+os.cpus()
+
+Output Example
+
+[
+ { model: 'Intel...', speed: 2400 },
+ { model: 'Intel...', speed: 2400 }
+]
+
+This tells how many CPU cores exist.
+
+
+----------------------------------------------------------
+6. os.totalmem()
+----------------------------------------------------------
+
+Definition:
+Returns the total system memory in bytes.
+
+Example
+
+os.totalmem()
+
+
+----------------------------------------------------------
+7. os.freemem()
+----------------------------------------------------------
+
+Definition:
+Returns the available free memory in bytes.
+
+Example
+
+os.freemem()
+
+
+----------------------------------------------------------
+8. os.hostname()
+----------------------------------------------------------
+
+Definition:
+Returns the hostname of the operating system.
+
+Example
+
+os.hostname()
+
+Example Output
+
+DESKTOP-ABC123
+
+
+----------------------------------------------------------
+9. os.homedir()
+----------------------------------------------------------
+
+Definition:
+Returns the home directory of the current user.
+
+Example
+
+os.homedir()
+
+Example Output
+
+C:\Users\vikash
+
