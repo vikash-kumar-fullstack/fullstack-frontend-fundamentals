@@ -1,0 +1,40 @@
+----------------------------------------------------------
+1. WHAT IS OS MODULE
+----------------------------------------------------------
+
+The os module is a built-in Node.js module used to get information about the operating system.
+
+Explanation:
+It provides system-level information such as CPU details, memory usage, system architecture, platform, uptime, and more.
+
+Developers use this module to monitor system resources or optimize applications based on the system environment.
+
+
+----------------------------------------------------------
+2. IMPORTING OS MODULE
+----------------------------------------------------------
+
+Since os is a core module, it does not require installation.
+
+Example
+
+const os = require("os")
+
+
+----------------------------------------------------------
+3. os.platform()
+----------------------------------------------------------
+
+Definition:
+Returns the operating system platform.
+
+Example
+
+os.platform()
+
+Possible Output
+
+win32   → Windows
+linux   → Linux
+darwin  → macOS
+
