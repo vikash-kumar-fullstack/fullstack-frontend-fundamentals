@@ -181,3 +181,52 @@ fs.rmdir("test",(err)=>{
  console.log("Directory removed")
 })
 
+
+----------------------------------------------------------
+11. STREAMS
+----------------------------------------------------------
+
+Definition:
+Streams allow reading or writing large files piece by piece instead of loading the entire file into memory.
+
+Explanation:
+Streams are useful for handling large data efficiently.
+
+Example:
+
+fs.createReadStream()
+fs.createWriteStream()
+
+
+----------------------------------------------------------
+12. BUFFERS
+----------------------------------------------------------
+
+Definition:
+Buffers are temporary storage areas used to handle binary data.
+
+Explanation:
+When files are read from disk, they are stored in memory as buffers before being processed.
+
+
+----------------------------------------------------------
+13. COMMON INTERVIEW QUESTIONS
+----------------------------------------------------------
+
+Q1: What is the fs module?
+
+Answer:
+The fs module is a core Node.js module used to perform file operations such as reading, writing, deleting, and managing files and directories.
+
+
+Q2: Difference between readFile and readFileSync?
+
+Answer:
+readFile is asynchronous and non-blocking while readFileSync is synchronous and blocks the execution.
+
+
+Q3: Why are asynchronous operations preferred in Node.js?
+
+Answer:
+Because they do not block the event loop and allow the server to handle multiple requests efficiently.
+
