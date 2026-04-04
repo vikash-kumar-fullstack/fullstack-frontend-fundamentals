@@ -358,3 +358,37 @@ app.get("/users")
 
 Express internally uses Node HTTP module.
 
+--------------------------------------------------------
+
+16. COMMON INTERVIEW QUESTIONS
+
+Q1: What is the HTTP module in Node.js?
+
+Answer:
+It is a built-in module used to create web servers and handle HTTP requests and responses.
+
+
+Q2: What are req and res objects?
+
+Answer:
+req contains request data from the client.
+res is used to send response back to the client.
+
+
+Q3: What does res.end() do?
+
+Answer:
+It sends the response and closes the connection.
+
+
+Q4: Difference between res.write() and res.end()?
+
+res.write() → sends data
+res.end() → finishes response
+
+
+Q5: Why do we set Content-Type?
+
+Answer:
+To tell the browser what type of data is being returned.
+
