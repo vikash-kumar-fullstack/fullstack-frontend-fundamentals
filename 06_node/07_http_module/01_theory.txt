@@ -1,0 +1,167 @@
+1. WHAT IS HTTP?
+
+HTTP stands for HyperText Transfer Protocol.
+
+It is the communication protocol used between a CLIENT and a SERVER on the web.
+
+Example:
+
+Browser (Client)  →  sends request  →  Server
+Server            →  sends response →  Browser
+
+
+Example flow:
+
+User types:
+http://example.com/products
+
+Browser sends HTTP request:
+
+GET /products HTTP/1.1
+
+
+Server responds:
+
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+<html>Product Page</html>
+
+
+Key Idea:
+HTTP follows a Request → Response model.
+
+
+--------------------------------------------------------
+
+2. WHAT IS NODE.JS HTTP MODULE?
+
+Node.js HTTP module allows us to:
+
+• create web servers
+• handle requests
+• send responses
+
+It is a built-in module, so we do NOT need to install it.
+
+Import it using:
+
+const http = require("http")
+
+This module is the foundation of frameworks like:
+
+Express
+NestJS
+Fastify
+
+
+--------------------------------------------------------
+
+3. HOW NODE CREATES A SERVER
+
+Node uses an event driven architecture.
+
+When a request arrives:
+
+1. Client sends request
+2. Server receives request
+3. Callback function executes
+4. Server sends response
+
+Example:
+
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+    res.end("Hello World");
+});
+
+server.listen(3000);
+
+
+Explanation:
+
+createServer() → creates server
+req → request object
+res → response object
+
+listen() → starts server
+
+
+--------------------------------------------------------
+
+4. REQUEST OBJECT (req)
+
+The request object contains information about the client's request.
+
+Important properties:
+
+req.method
+req.url
+req.headers
+
+
+Example:
+
+GET /users?id=10
+
+
+Access values:
+
+req.method → GET
+req.url → /users?id=10
+req.headers → browser info
+
+
+Interview Question:
+
+Q: What information does the request object contain?
+
+Answer:
+It contains request method, URL, headers, and client request data.
+
+
+--------------------------------------------------------
+
+5. RESPONSE OBJECT (res)
+
+The response object is used to send data back to the client.
+
+Important methods:
+
+res.write()
+res.end()
+res.setHeader()
+res.statusCode
+
+
+Example:
+
+res.statusCode = 200
+res.setHeader("Content-Type", "text/plain")
+res.end("Hello World")
+
+
+--------------------------------------------------------
+
+6. HTTP HEADERS
+
+Headers contain metadata about request or response.
+
+Example:
+
+Content-Type
+Authorization
+Cookie
+User-Agent
+
+
+Example response header:
+
+Content-Type: application/json
+
+
+Setting header in Node:
+
+res.setHeader("Content-Type","application/json")
+
