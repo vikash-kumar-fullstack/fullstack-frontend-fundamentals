@@ -287,3 +287,74 @@ const data = {
 res.setHeader("Content-Type","application/json")
 res.end(JSON.stringify(data))
 
+
+--------------------------------------------------------
+
+13. URL PARAMETERS
+
+Example URL:
+
+/product/10
+
+10 is a parameter.
+
+Node usually parses URL using:
+
+const url = require("url")
+
+Example:
+
+const parsed = url.parse(req.url,true)
+
+parsed.query.id
+
+
+--------------------------------------------------------
+
+14. QUERY PARAMETERS
+
+Example:
+
+/search?name=vikash&age=21
+
+Parsed result:
+
+{
+ name:"vikash",
+ age:"21"
+}
+
+
+--------------------------------------------------------
+
+15. HTTP MODULE vs EXPRESS
+
+HTTP MODULE
+
+• low level
+• manual routing
+• manual parsing
+• more code
+
+
+EXPRESS
+
+• high level framework
+• easy routing
+• middleware
+• faster development
+
+
+Example comparison:
+
+HTTP:
+
+if(req.url === "/users")
+
+EXPRESS:
+
+app.get("/users")
+
+
+Express internally uses Node HTTP module.
+
