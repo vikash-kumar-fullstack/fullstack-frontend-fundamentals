@@ -1,0 +1,133 @@
+Before learning protocols, remember this idea:
+
+Internet communication follows layers.
+
+Application Layer
+Transport Layer
+Network Layer
+Link Layer
+Physical Layer
+
+Protocols we will study:
+
+Application Layer
+HTTP
+HTTPS
+DNS
+FTP
+SMTP
+POP3
+IMAP
+
+Transport Layer
+TCP
+UDP
+
+
+------------------------------------------------------------
+1. TCP (Transmission Control Protocol)
+------------------------------------------------------------
+
+Layer:
+Transport Layer
+
+TCP is a connection-oriented protocol used for reliable data transmission.
+
+
+MAIN FEATURES
+
+Reliable communication
+
+Error checking
+
+Data arrives in correct order
+
+Retransmission of lost packets
+
+Flow control
+
+Congestion control
+
+
+Because of reliability, protocols like HTTP and SMTP use TCP.
+
+
+
+------------------------------------------------------------
+TCP CONNECTION FLOW
+(VERY IMPORTANT FOR INTERVIEWS)
+------------------------------------------------------------
+
+TCP uses something called a
+
+3-WAY HANDSHAKE
+
+
+STEP 1 — SYN
+
+Client sends synchronization request to server.
+
+Client → Server
+SYN
+
+
+STEP 2 — SYN + ACK
+
+Server acknowledges request.
+
+Server → Client
+SYN ACK
+
+
+STEP 3 — ACK
+
+Client confirms connection.
+
+Client → Server
+ACK
+
+
+Connection established.
+
+
+
+------------------------------------------------------------
+TCP TERMINATION (4 WAY HANDSHAKE)
+------------------------------------------------------------
+
+STEP 1
+Client → FIN
+
+STEP 2
+Server → ACK
+
+STEP 3
+Server → FIN
+
+STEP 4
+Client → ACK
+
+
+Connection closed.
+
+
+
+------------------------------------------------------------
+WHY TCP IS RELIABLE
+
+Sequence numbers
+
+Acknowledgements
+
+Retransmission
+
+Flow control window
+
+
+------------------------------------------------------------
+INTERVIEW QUESTIONS
+
+Q: Why HTTP uses TCP?
+
+Because HTTP needs reliable delivery of web data.
+
