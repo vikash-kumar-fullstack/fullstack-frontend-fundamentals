@@ -260,3 +260,93 @@ Server receives request
 
 and sends response.
 
+
+-----------------------------------------------------
+
+11. TCP vs UDP (VERY IMPORTANT)
+
+These are transport layer protocols.
+
+
+TCP (Transmission Control Protocol)
+
+Features:
+
+Reliable
+Connection-oriented
+Error checking
+Data arrives in order
+
+
+Examples:
+
+HTTP
+HTTPS
+SMTP
+FTP
+
+
+-----------------------------------------------------
+
+UDP (User Datagram Protocol)
+
+Features:
+
+Faster
+Connectionless
+No guarantee of delivery
+No ordering
+
+
+Examples:
+
+Video streaming
+Online gaming
+DNS queries
+
+
+-----------------------------------------------------
+
+12. HTTP PORT FLOW (INTERVIEW IMPORTANT)
+
+Example:
+
+http://example.com
+
+
+Browser sends request to:
+
+example.com:80
+
+
+Flow:
+
+Browser → TCP connection → Port 80 → Server
+
+
+Server processes request
+
+Server sends response
+
+
+-----------------------------------------------------
+
+13. HTTPS PORT FLOW
+
+Example:
+
+https://example.com
+
+
+Port used:
+
+443
+
+
+Flow:
+
+Browser → TCP connection → TLS encryption → Port 443 → Server
+
+
+HTTPS adds encryption layer.
+
