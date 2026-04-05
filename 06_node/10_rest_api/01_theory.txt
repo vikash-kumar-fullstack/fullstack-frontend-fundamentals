@@ -312,3 +312,67 @@ Calling multiple times still results in user deleted.
 
 POST is NOT idempotent.
 
+
+-----------------------------------------------------------
+
+
+9. REST API URL DESIGN
+-----------------------------------------------------------
+
+Good REST design uses nouns not verbs.
+
+Bad design:
+
+/getUsers
+/createUser
+
+
+Good design:
+
+/users
+/users/10
+
+
+-----------------------------------------------------------
+
+
+10. STATUS CODES IN REST API
+-----------------------------------------------------------
+
+200 OK
+
+Request successful
+
+
+201 Created
+
+New resource created
+
+
+204 No Content
+
+Success but no body returned
+
+
+400 Bad Request
+
+Invalid client request
+
+
+401 Unauthorized
+
+Authentication required
+
+
+403 Forbidden
+
+Access denied
+
+
+404 Not Found
+
+Resource does not exist
+
+
+500 Internal Server Error
+
