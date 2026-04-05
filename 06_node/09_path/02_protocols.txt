@@ -600,3 +600,66 @@ ARP
 Converts IP address into MAC address.
 
 
+
+------------------------------------------------------------
+COMMON INTERVIEW QUESTIONS
+------------------------------------------------------------
+
+Q1
+
+What is difference between HTTP and HTTPS?
+
+HTTPS encrypts communication using TLS.
+
+
+
+------------------------------------------------------------
+
+Q2
+
+What protocol does DNS use?
+
+Mostly UDP port 53.
+
+
+
+------------------------------------------------------------
+
+Q3
+
+Why TCP uses 3 way handshake?
+
+To synchronize sequence numbers and establish reliable connection.
+
+
+
+------------------------------------------------------------
+
+Q4
+
+Why UDP is faster?
+
+Because it does not establish connection
+and does not perform retransmission.
+
+
+
+------------------------------------------------------------
+
+Q5
+
+Which protocol sends emails?
+
+SMTP.
+
+
+
+------------------------------------------------------------
+
+Q6
+
+Which protocol retrieves emails?
+
+POP3 and IMAP.
+
+
