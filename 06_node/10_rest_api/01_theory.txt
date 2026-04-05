@@ -142,3 +142,76 @@ PUT /users/10
 DELETE → DELETE
 
 DELETE /users/10
+
+
+-----------------------------------------------------------
+
+
+6. REST ARCHITECTURAL CONSTRAINTS
+-----------------------------------------------------------
+
+REST APIs follow 6 principles.
+
+
+-----------------------------------------------------------
+1. CLIENT SERVER ARCHITECTURE
+-----------------------------------------------------------
+
+Client and server are separate systems.
+
+Client:
+
+Browser
+Mobile app
+Frontend application
+
+Server:
+
+API server
+Database server
+
+
+This separation allows independent development.
+
+
+-----------------------------------------------------------
+2. STATELESS
+-----------------------------------------------------------
+
+Each request must contain all required information.
+
+Server does not store client session.
+
+
+Example:
+
+Bad example:
+
+Server stores login session.
+
+
+Good example:
+
+Client sends authentication token with every request.
+
+
+Example:
+
+Authorization: Bearer token
+
+
+-----------------------------------------------------------
+3. CACHEABLE
+-----------------------------------------------------------
+
+Responses should be cacheable when possible.
+
+Caching improves performance.
+
+Example:
+
+GET /products
+
+
+Browser can cache response.
+
