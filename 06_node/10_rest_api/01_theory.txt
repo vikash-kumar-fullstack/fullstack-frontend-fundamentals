@@ -516,3 +516,70 @@ STEP 5
 
 Frontend renders products.
 
+
+-----------------------------------------------------------
+
+
+18. COMMON INTERVIEW QUESTIONS
+-----------------------------------------------------------
+
+
+Q1
+
+What is REST?
+
+
+REST is an architectural style used to design scalable
+web APIs using HTTP protocols.
+
+
+-----------------------------------------------------------
+
+
+Q2
+
+Difference between REST and RESTful API?
+
+
+REST is architecture.
+
+RESTful API is an API that follows REST principles.
+
+
+-----------------------------------------------------------
+
+
+Q3
+
+What is statelessness?
+
+
+Server does not store client session.
+Each request contains full information.
+
+
+-----------------------------------------------------------
+
+
+Q4
+
+What is idempotent request?
+
+
+Request that produces same result when repeated.
+
+
+-----------------------------------------------------------
+
+
+Q5
+
+Why REST APIs are popular?
+
+
+Simple
+Scalable
+Works with HTTP
+Easy integration
+
+
