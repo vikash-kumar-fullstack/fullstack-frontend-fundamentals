@@ -376,3 +376,66 @@ Resource does not exist
 
 500 Internal Server Error
 
+
+-----------------------------------------------------------
+
+
+11. REQUEST BODY IN REST
+-----------------------------------------------------------
+
+POST and PUT requests send body data.
+
+Example JSON body:
+
+{
+ name: "Vikash",
+ email: "vikash@gmail.com"
+}
+
+
+-----------------------------------------------------------
+
+
+12. REST RESPONSE FORMAT
+-----------------------------------------------------------
+
+REST APIs commonly return JSON.
+
+Example:
+
+{
+ id:1,
+ name:"Vikash",
+ role:"Developer"
+}
+
+
+-----------------------------------------------------------
+
+
+13. PAGINATION IN REST API
+-----------------------------------------------------------
+
+Large data sets should be paginated.
+
+Example:
+
+GET /users?page=1&limit=10
+
+
+-----------------------------------------------------------
+
+
+14. VERSIONING IN REST API
+-----------------------------------------------------------
+
+APIs evolve over time.
+
+Versioning prevents breaking old clients.
+
+
+Example:
+
+/api/v1/users
+/api/v2/users
+
