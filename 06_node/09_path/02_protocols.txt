@@ -131,3 +131,55 @@ Q: Why HTTP uses TCP?
 
 Because HTTP needs reliable delivery of web data.
 
+
+------------------------------------------------------------
+2. UDP (User Datagram Protocol)
+------------------------------------------------------------
+
+Layer:
+Transport Layer
+
+UDP is a connectionless protocol.
+
+
+MAIN FEATURES
+
+Fast
+
+Low overhead
+
+No connection setup
+
+No delivery guarantee
+
+No ordering guarantee
+
+
+UDP is used where speed matters more than reliability.
+
+
+
+------------------------------------------------------------
+UDP FLOW
+------------------------------------------------------------
+
+Client sends packet directly.
+
+No handshake.
+
+Server may receive or lose packets.
+
+
+
+------------------------------------------------------------
+REAL WORLD USE
+
+Online gaming
+
+Video streaming
+
+DNS queries
+
+VoIP calls
+
+
