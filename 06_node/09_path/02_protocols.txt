@@ -384,3 +384,54 @@ No encryption
 Data visible in network
 
 
+
+------------------------------------------------------------
+5. HTTPS (Secure HTTP)
+------------------------------------------------------------
+
+HTTPS is HTTP with encryption.
+
+Encryption uses SSL/TLS.
+
+
+
+PORT
+
+443
+
+
+
+------------------------------------------------------------
+HTTPS FLOW
+------------------------------------------------------------
+
+STEP 1
+
+TCP handshake
+
+
+STEP 2
+
+TLS handshake
+
+
+STEP 3
+
+Certificate verification
+
+
+STEP 4
+
+Encrypted communication begins.
+
+
+
+TLS handshake includes
+
+Key exchange
+
+Cipher negotiation
+
+Authentication
+
+
