@@ -439,3 +439,80 @@ Example:
 /api/v1/users
 /api/v2/users
 
+
+-----------------------------------------------------------
+
+
+15. REST vs SOAP
+-----------------------------------------------------------
+
+REST
+
+Lightweight
+Uses HTTP
+JSON format
+Easy to use
+
+
+SOAP
+
+Heavy protocol
+XML based
+Strict structure
+
+
+-----------------------------------------------------------
+
+
+16. REST vs GRAPHQL
+-----------------------------------------------------------
+
+REST
+
+Multiple endpoints
+Fixed responses
+
+
+GraphQL
+
+Single endpoint
+Client specifies required fields
+
+
+-----------------------------------------------------------
+
+
+17. REAL WORLD REST API FLOW
+-----------------------------------------------------------
+
+Example:
+
+User opens e-commerce website.
+
+
+STEP 1
+
+Frontend sends request:
+
+GET /products
+
+
+STEP 2
+
+API server processes request.
+
+
+STEP 3
+
+Server fetches data from database.
+
+
+STEP 4
+
+Server returns JSON response.
+
+
+STEP 5
+
+Frontend renders products.
+
