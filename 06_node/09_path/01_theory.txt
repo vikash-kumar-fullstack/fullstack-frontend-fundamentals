@@ -134,3 +134,80 @@ Port numbers range from:
 
 They are divided into three categories.
 
+
+-----------------------------------------------------
+
+6. WELL-KNOWN PORTS (0–1023)
+
+These ports are reserved for standard protocols.
+
+Examples:
+
+20 → FTP data transfer
+21 → FTP control
+22 → SSH
+23 → Telnet
+25 → SMTP (email sending)
+53 → DNS
+80 → HTTP
+110 → POP3
+143 → IMAP
+443 → HTTPS
+
+
+These ports are usually used by system services.
+
+
+-----------------------------------------------------
+
+7. REGISTERED PORTS (1024–49151)
+
+These ports are assigned to applications
+but can also be used by developers.
+
+Examples:
+
+3000 → Node.js development server
+3306 → MySQL
+5432 → PostgreSQL
+6379 → Redis
+8080 → Alternative HTTP server
+
+
+-----------------------------------------------------
+
+8. DYNAMIC / EPHEMERAL PORTS (49152–65535)
+
+These ports are temporary ports used by clients.
+
+Example:
+
+When your browser sends a request to a website,
+your system randomly assigns an ephemeral port.
+
+
+Example connection:
+
+Client:
+192.168.1.5:51532
+
+Server:
+142.250.183.14:443
+
+
+-----------------------------------------------------
+
+9. COMMON PORTS USED IN WEB DEVELOPMENT
+
+80 → HTTP
+443 → HTTPS
+3000 → Node.js development
+5000 → Python Flask
+8000 → Django
+8080 → alternative HTTP
+
+
+Example Node server:
+
+app.listen(3000)
+
