@@ -290,3 +290,97 @@ Usually uses UDP
 
 Sometimes TCP for large responses.
 
+
+
+------------------------------------------------------------
+4. HTTP (HyperText Transfer Protocol)
+------------------------------------------------------------
+
+Layer:
+Application Layer
+
+
+HTTP is the protocol used for transferring web pages
+between client and server.
+
+
+
+DEFAULT PORT
+
+80
+
+
+
+------------------------------------------------------------
+HTTP REQUEST STRUCTURE
+------------------------------------------------------------
+
+GET /products HTTP/1.1
+
+Host: example.com
+User-Agent: Chrome
+
+
+------------------------------------------------------------
+HTTP RESPONSE STRUCTURE
+------------------------------------------------------------
+
+HTTP/1.1 200 OK
+
+Content-Type: text/html
+
+
+<html>Page</html>
+
+
+
+------------------------------------------------------------
+HTTP METHODS
+
+GET
+
+Fetch data
+
+
+POST
+
+Send data
+
+
+PUT
+
+Update resource
+
+
+DELETE
+
+Remove resource
+
+
+
+------------------------------------------------------------
+HTTP FLOW
+
+STEP 1
+
+Browser sends HTTP request
+
+
+STEP 2
+
+Server processes request
+
+
+STEP 3
+
+Server returns response
+
+
+------------------------------------------------------------
+HTTP LIMITATION
+
+No encryption
+
+Data visible in network
+
+
