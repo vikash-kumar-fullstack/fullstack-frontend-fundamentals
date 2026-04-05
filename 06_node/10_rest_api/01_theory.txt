@@ -60,3 +60,85 @@ Important idea:
 
 REST uses HTTP protocols to manage resources.
 
+
+-----------------------------------------------------------
+
+
+3. WHAT IS A RESOURCE?
+-----------------------------------------------------------
+
+In REST everything is treated as a resource.
+
+Examples:
+
+User
+Product
+Order
+Cart
+
+
+Each resource is represented by a URI.
+
+Example:
+
+/users
+/products
+/orders
+
+
+-----------------------------------------------------------
+
+
+4. WHAT IS A RESTFUL API?
+-----------------------------------------------------------
+
+A RESTful API is an API that follows the REST architectural
+principles.
+
+Example:
+
+GET /users
+POST /users
+GET /users/10
+PUT /users/10
+DELETE /users/10
+
+
+These operations correspond to CRUD operations.
+
+
+-----------------------------------------------------------
+
+
+5. CRUD OPERATIONS IN REST
+-----------------------------------------------------------
+
+CRUD means:
+
+Create
+Read
+Update
+Delete
+
+
+Mapping with HTTP methods:
+
+
+CREATE → POST
+
+POST /users
+
+
+READ → GET
+
+GET /users
+
+
+UPDATE → PUT or PATCH
+
+PUT /users/10
+
+
+DELETE → DELETE
+
+DELETE /users/10
