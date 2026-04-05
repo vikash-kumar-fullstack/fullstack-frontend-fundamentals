@@ -485,3 +485,47 @@ UPLOAD
 DOWNLOAD
 
 
+
+------------------------------------------------------------
+7. SMTP (Simple Mail Transfer Protocol)
+------------------------------------------------------------
+
+Used for sending emails.
+
+
+PORTS
+
+25
+587
+
+
+
+FLOW
+
+Email client → SMTP server → Receiver SMTP server
+
+
+
+------------------------------------------------------------
+EMAIL SENDING FLOW
+
+STEP 1
+
+User sends email.
+
+
+STEP 2
+
+SMTP server receives email.
+
+
+STEP 3
+
+SMTP server finds recipient mail server.
+
+
+STEP 4
+
+Email delivered.
+
+
