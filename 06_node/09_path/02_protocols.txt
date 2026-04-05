@@ -547,3 +547,56 @@ FEATURE
 
 Downloads email to local device.
 
+
+------------------------------------------------------------
+9. IMAP (Internet Message Access Protocol)
+------------------------------------------------------------
+
+Used for accessing email stored on server.
+
+
+PORT
+
+143
+
+
+
+Difference
+
+POP3 downloads email.
+
+IMAP syncs email with server.
+
+
+
+------------------------------------------------------------
+10. OTHER IMPORTANT PROTOCOLS
+------------------------------------------------------------
+
+SSH
+
+Secure remote login
+
+Port 22
+
+
+
+TELNET
+
+Remote login protocol
+
+Port 23
+
+
+
+DHCP
+
+Automatically assigns IP addresses.
+
+
+
+ARP
+
+Converts IP address into MAC address.
+
+
