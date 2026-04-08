@@ -196,3 +196,48 @@ Example access:
 
 req.headers.authorization
 
+
+================================================================================
+SECTION 3: RESPONSE OBJECT
+================================================================================
+
+The response object is used to send data back to the client.
+
+Once the backend finishes processing the request, it must send a response
+using the response object.
+
+Common response methods include:
+
+
+res.send()
+
+Sends a plain response to the client.
+
+
+res.json()
+
+Sends a JSON response.
+
+Example:
+
+res.json({message:"success"})
+
+
+res.status()
+
+Sets the HTTP status code.
+
+Example:
+
+res.status(200)
+
+
+res.redirect()
+
+Redirects the client to another URL.
+
+
+Example combined usage:
+
+res.status(200).json({message:"success"})
+
