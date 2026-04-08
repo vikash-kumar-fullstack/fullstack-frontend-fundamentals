@@ -1,0 +1,28 @@
+=========================================================
+BACKEND ARCHITECTURE FUNDAMENTALS
+Monolithic vs Client-Server vs Microservices
+=========================================================
+
+1. INTRODUCTION TO SOFTWARE ARCHITECTURE
+---------------------------------------------------------
+
+Software Architecture refers to the overall structure and design
+of a software system. It defines how different components of a
+system are organized and how they communicate with each other.
+
+Architecture determines:
+
+- How frontend communicates with backend
+- How backend processes requests
+- How data is stored and accessed
+- How scalable and maintainable the system is
+
+In modern web applications, architecture is extremely important
+because systems must handle thousands or even millions of users.
+
+The three common architectures discussed are:
+
+1. Monolithic Architecture
+2. Client-Server Architecture
+3. Microservices Architecture
+
