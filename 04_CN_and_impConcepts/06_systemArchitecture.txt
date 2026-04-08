@@ -197,3 +197,91 @@ If the server crashes, the entire system stops working.
 3. Network dependency
 Client and server communication requires network connectivity.
 
+
+=========================================================
+4. MICROSERVICES ARCHITECTURE
+=========================================================
+
+Definition:
+Microservices Architecture is a system design where the backend
+application is divided into multiple small, independent services.
+
+Each service focuses on one specific functionality.
+
+Instead of a single backend server, the system consists of
+many smaller services.
+
+Example Microservices
+
+User Service
+Order Service
+Payment Service
+Notification Service
+Product Service
+
+Each service:
+
+- Runs independently
+- Has its own logic
+- Can be deployed independently
+- Can scale independently
+
+Typical Microservices Flow
+
+Client
+   ↓
+API Gateway
+   ↓
+Multiple Services
+   ├── User Service
+   ├── Order Service
+   ├── Payment Service
+   └── Notification Service
+
+Services communicate with each other using:
+
+- REST APIs
+- gRPC
+- Message queues (Kafka, RabbitMQ)
+
+Advantages of Microservices
+
+1. Independent scaling
+If payment service receives heavy traffic, only that service
+needs scaling.
+
+2. Independent deployment
+A change in one service does not require redeploying the entire system.
+
+3. Technology flexibility
+Different services can use different programming languages.
+
+Example:
+
+User Service → Node.js
+Payment Service → Java
+Recommendation Service → Python
+Analytics → Go
+
+4. Better team organization
+Different teams can maintain different services.
+
+Disadvantages of Microservices
+
+1. High complexity
+Managing multiple services requires advanced infrastructure.
+
+2. Network communication overhead
+Services communicate over network, increasing latency.
+
+3. Distributed debugging difficulty
+Tracing issues across services is harder.
+
+4. DevOps requirements
+Requires tools like:
+
+Docker
+Kubernetes
+Service Discovery
+CI/CD pipelines
+
