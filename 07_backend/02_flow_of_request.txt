@@ -1,0 +1,52 @@
+================================================================================
+COMPLETE BACKEND & WEB REQUEST FLOW NOTES
+From Typing a URL to Rendering a Web Page
+================================================================================
+
+INTRODUCTION
+--------------------------------------------------------------------------------
+Modern web applications rely on multiple technologies working together across
+different layers of the internet. When a user types a URL in the browser and
+presses Enter, many complex processes occur before the webpage finally appears
+on the screen.
+
+This document explains the entire flow in depth, starting from system
+architecture concepts to the full networking and browser rendering process.
+
+The main concepts covered include:
+
+1. Software architecture models
+2. Domain Name System (DNS)
+3. TCP connection establishment
+4. TLS handshake and secure communication
+5. HTTP request and response
+6. Backend server processing
+7. Database queries
+8. Browser rendering pipeline
+
+
+
+================================================================================
+SECTION 2: WHAT HAPPENS WHEN YOU TYPE A URL
+================================================================================
+
+Example URL:
+
+https://www.example.com/products?id=10
+
+URL stands for: Uniform Resource Locator
+
+The browser parses the URL into components.
+
+Protocol:
+https
+
+Domain:
+www.example.com
+
+Path:
+/products
+
+Query Parameters:
+?id=10
+
