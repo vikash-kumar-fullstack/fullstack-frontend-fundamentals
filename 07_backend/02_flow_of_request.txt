@@ -408,3 +408,37 @@ CSS Object Model
 JavaScript execution can modify the DOM dynamically and request additional
 data from servers.
 
+
+================================================================================
+FINAL SUMMARY
+================================================================================
+
+Complete flow:
+
+User types URL
+↓
+Browser parses URL
+↓
+Browser cache check
+↓
+DNS lookup
+↓
+TCP connection (three-way handshake)
+↓
+TLS handshake for secure connection
+↓
+HTTP request sent
+↓
+Load balancer distributes request
+↓
+Web server receives request
+↓
+Application server processes logic
+↓
+Database query executed
+↓
+Server sends HTTP response
+↓
+Browser renders HTML, CSS, and JavaScript
+↓
+Web page displayed to user
