@@ -77,3 +77,46 @@ Handler Function: function(req, res)
 When a client sends a request to /users using the GET method, this function
 executes.
 
+
+--------------------------------------------------------------------------------
+STATIC ROUTES
+--------------------------------------------------------------------------------
+
+Static routes are fixed paths that always remain the same.
+
+Examples:
+
+/users
+/products
+/orders
+
+These routes always return the same type of resource.
+
+
+--------------------------------------------------------------------------------
+DYNAMIC ROUTES
+--------------------------------------------------------------------------------
+
+Dynamic routes allow parameters to be passed inside the URL path.
+
+Example:
+
+/users/:id
+
+Here :id represents a dynamic parameter.
+
+Example implementation:
+
+app.get("/users/:id", (req, res) => {
+    console.log(req.params.id)
+})
+
+If the client sends the request:
+
+/users/45
+
+The value 45 is extracted from the URL and stored in req.params.id.
+
+Dynamic routing allows backend systems to serve different resources using
+the same route structure.
+
