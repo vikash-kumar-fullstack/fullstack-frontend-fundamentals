@@ -120,3 +120,79 @@ The value 45 is extracted from the URL and stored in req.params.id.
 Dynamic routing allows backend systems to serve different resources using
 the same route structure.
 
+
+================================================================================
+SECTION 2: REQUEST OBJECT
+================================================================================
+
+In Express and many backend frameworks, every route handler receives two
+objects:
+
+req (request object)
+res (response object)
+
+The request object contains all the information sent by the client.
+
+Important properties of the request object include:
+
+
+req.params
+
+This property stores parameters extracted from the URL path.(dynamic routing parameter)
+
+Example route:
+
+/users/:id
+
+Request:
+
+/users/10
+
+Access:
+
+req.params.id
+
+
+req.query
+
+Query parameters appear after the question mark in a URL.
+
+Example request:
+
+/users?id=10
+
+Access:
+
+req.query.id
+
+
+req.body
+
+The body contains data sent by the client in POST or PUT requests.
+
+Example JSON request body:
+
+{
+   "name":"John",
+   "email":"john@email.com"
+}
+
+Access:
+
+req.body.name
+
+
+req.headers
+
+Headers contain metadata about the request.
+
+Examples include:
+
+Authorization tokens
+Content type
+User agent
+
+Example access:
+
+req.headers.authorization
+
