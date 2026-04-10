@@ -457,3 +457,39 @@ Response
 
 MVC architecture improves maintainability and scalability.
 
+
+================================================================================
+SECTION 8: VALIDATION
+================================================================================
+
+Validation ensures that incoming data meets expected requirements before
+processing.
+
+For example, during user registration, certain fields may be mandatory.
+
+Required fields might include:
+
+email
+password
+name
+
+Example manual validation:
+
+if(!email){
+    return res.status(400).send("Email required")
+}
+
+
+Validation is critical for preventing invalid data from entering the system.
+
+
+Common validation libraries used in backend development include:
+
+Joi
+Zod
+express-validator
+
+
+These libraries allow developers to define schemas that validate request data
+automatically.
+
