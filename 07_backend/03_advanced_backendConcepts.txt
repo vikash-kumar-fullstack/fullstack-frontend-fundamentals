@@ -322,3 +322,48 @@ function auth(req,res,next){
         res.status(401).send("Unauthorized")
     }
 }
+
+
+================================================================================
+SECTION 5: CONTROLLER ARCHITECTURE
+================================================================================
+
+In large backend applications, it is considered bad practice to write all
+logic directly inside route definitions.
+
+Example of poor structure:
+
+app.get("/users", async(req,res)=>{
+   const users = await db.find()
+   res.json(users)
+})
+
+This approach mixes routing logic with business logic, making the code
+difficult to maintain.
+
+
+Instead, modern backend systems use a layered architecture.
+
+
+Route → Controller → Service → Database
+
+
+Controllers handle incoming requests and determine how the application
+should respond.
+
+
+Example controller:
+
+async function getUsers(req,res){
+    const users = await userService.getAllUsers()
+    res.json(users)
+}
+
+
+Route definition:
+
+router.get("/users", getUsers)
+
+
+Controllers act as the bridge between routes and business logic.
+
