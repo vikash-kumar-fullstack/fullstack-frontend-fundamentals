@@ -396,3 +396,64 @@ Separation of concerns
 
 Large enterprise applications rely heavily on service layers.
 
+
+================================================================================
+SECTION 7: MVC ARCHITECTURE
+================================================================================
+
+MVC stands for:
+
+Model
+View
+Controller
+
+This architectural pattern separates application logic into three main
+components.
+
+
+Model
+
+Represents the data structure and database schema.
+
+Example:
+
+const UserSchema = new mongoose.Schema({
+  name:String,
+  email:String
+})
+
+
+View
+
+Represents the user interface.
+
+Examples include:
+
+HTML pages
+React components
+Angular templates
+
+
+Controller
+
+Handles incoming requests and interacts with models to retrieve or modify
+data.
+
+
+MVC Request Flow
+
+Client
+   ↓
+Route
+   ↓
+Controller
+   ↓
+Model
+   ↓
+Database
+   ↓
+Response
+
+
+MVC architecture improves maintainability and scalability.
+
