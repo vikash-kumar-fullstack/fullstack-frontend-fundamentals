@@ -441,3 +441,47 @@ preflight request.
 
 The purpose is to check whether the server allows the actual request.
 
+
+================================================================================
+SECTION 10: XSS (CROSS-SITE SCRIPTING)
+================================================================================
+
+XSS stands for Cross-Site Scripting.
+
+It is a vulnerability that allows attackers to inject malicious scripts into
+web pages viewed by other users.
+
+When the victim loads the page, the malicious script executes in their browser.
+
+Possible consequences include:
+
+Stealing cookies
+Session hijacking
+Redirecting users to malicious websites
+
+
+TYPES OF XSS
+
+Stored XSS
+
+Malicious scripts are stored in the database and executed whenever users load
+the page.
+
+
+Reflected XSS
+
+Malicious scripts are included in a request and immediately reflected in the
+response.
+
+
+DOM-Based XSS
+
+Occurs when client-side JavaScript manipulates the DOM in unsafe ways.
+
+
+PREVENTION METHODS
+
+Input sanitization
+Output escaping
+Content Security Policy
+HTTP-only cookies
