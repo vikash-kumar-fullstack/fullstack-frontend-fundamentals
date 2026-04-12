@@ -271,3 +271,91 @@ However, these introduce additional infrastructure complexity.
 
 To avoid these problems, many modern applications use JWT-based authentication.
 
+
+================================================================================
+SECTION 6: JWT (JSON WEB TOKEN)
+================================================================================
+
+JWT stands for JSON Web Token.
+
+It is a compact and self-contained method for securely transmitting information
+between client and server.
+
+JWT uses stateless authentication.
+
+This means the server does not store session data.
+
+Instead, all necessary information about the user is stored inside the token.
+
+When a user logs in successfully, the server generates a JWT and sends it to
+the client.
+
+The client stores the token and sends it with every request.
+
+The server verifies the token each time to authenticate the user.
+
+Because the server does not store session data, JWT works well in distributed
+systems and microservice architectures.
+
+
+================================================================================
+SECTION 7: JWT STRUCTURE
+================================================================================
+
+A JWT consists of three parts separated by dots.
+
+HEADER.PAYLOAD.SIGNATURE
+
+
+HEADER
+
+The header contains metadata about the token such as the signing algorithm.
+
+Example:
+
+{
+ "alg": "HS256",
+ "typ": "JWT"
+}
+
+
+PAYLOAD
+
+The payload contains claims about the user.
+
+Claims may include:
+
+User ID
+Email
+Role
+Token expiration time
+
+Example:
+
+{
+ "userId": 42,
+ "email": "user@email.com",
+ "exp": 1730000000
+}
+
+Important note:
+
+The payload is NOT encrypted.
+
+It is only encoded using Base64.
+
+Therefore sensitive information should never be stored inside the payload.
+
+
+SIGNATURE
+
+The signature ensures that the token has not been tampered with.
+
+The signature is generated using:
+
+Encoded Header
+Encoded Payload
+Secret Key
+
+If someone modifies the payload, the signature verification will fail.
+
