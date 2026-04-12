@@ -232,3 +232,42 @@ Server validates session
 Sessions are secure and simple but introduce scalability challenges when
 applications grow.
 
+
+================================================================================
+SECTION 5: SESSION SCALING PROBLEM
+================================================================================
+
+One major limitation of session-based authentication is scalability.
+
+Because session data is stored on the server, the server must maintain session
+records for every active user.
+
+If an application has millions of users, the server must store millions of
+sessions.
+
+This can consume large amounts of server memory and degrade performance.
+
+Another issue occurs in distributed systems with multiple servers.
+
+Example scenario:
+
+User logs in through Server A
+Session is stored on Server A
+
+If the user's next request is handled by Server B, Server B will not recognize
+the session.
+
+This causes authentication failure.
+
+Solutions include:
+
+Shared session storage systems
+Examples:
+
+Redis
+Memcached
+
+However, these introduce additional infrastructure complexity.
+
+To avoid these problems, many modern applications use JWT-based authentication.
+
