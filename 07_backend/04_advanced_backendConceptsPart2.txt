@@ -729,3 +729,111 @@ If an XSS attack occurs, the script cannot access cookies using:
 
 document.cookie
 
+
+================================================================================
+SECTION 15: CSRF (CROSS-SITE REQUEST FORGERY)
+================================================================================
+
+WHAT IS CSRF?
+
+CSRF stands for Cross-Site Request Forgery.
+
+CSRF is an attack where a malicious website tricks a user's browser into
+sending an unauthorized request to another website where the user is already
+authenticated.
+
+This attack works because browsers automatically attach cookies to requests.
+
+
+================================================================================
+SECTION 16: HOW CSRF ATTACKS WORK
+================================================================================
+
+Consider the following scenario.
+
+User logs into banking website:
+
+https://bank.com
+
+Browser stores authentication cookie:
+
+sessionId=abc123
+
+Now the user visits a malicious website:
+
+https://evil.com
+
+The attacker includes the following HTML:
+
+<img src="https://bank.com/transfer?amount=1000&to=hacker">
+
+When the browser loads the image, it actually sends the following request:
+
+GET https://bank.com/transfer?amount=1000&to=hacker
+Cookie: sessionId=abc123
+
+The bank server receives the request and sees the valid cookie.
+
+The server assumes the request came from the authenticated user.
+
+As a result, the money transfer occurs without the user's knowledge.
+
+
+================================================================================
+SECTION 17: WHY CSRF ATTACKS WORK
+================================================================================
+
+CSRF works because browsers automatically include cookies in requests.
+
+Even if the request originates from a malicious website, the browser still
+attaches the authentication cookie.
+
+The server cannot easily distinguish whether the request was initiated by the
+user or by a malicious site.
+
+
+================================================================================
+SECTION 18: CSRF PREVENTION METHODS
+================================================================================
+
+CSRF attacks can be prevented using several security mechanisms.
+
+
+CSRF TOKENS
+
+The server generates a unique random token and includes it in forms.
+
+Example:
+
+csrfToken = 9d8f7sdf8
+
+Form:
+
+<input type="hidden" name="csrfToken" value="9d8f7sdf8">
+
+When the request is submitted, the server verifies the token.
+
+Because attackers cannot guess the token, the request fails.
+
+
+SAMESITE COOKIES
+
+Cookies can be configured with SameSite attributes.
+
+Example:
+
+Set-Cookie: sessionId=abc123; SameSite=Strict
+
+This instructs the browser not to send cookies with cross-site requests.
+
+
+ORIGIN OR REFERER HEADER VALIDATION
+
+Servers can check the origin of the request.
+
+Example header:
+
+Origin: https://bank.com
+
+If the request originates from another domain such as evil.com, the server
+rejects the request.
