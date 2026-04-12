@@ -837,3 +837,52 @@ Origin: https://bank.com
 
 If the request originates from another domain such as evil.com, the server
 rejects the request.
+
+
+================================================================================
+SECTION 19: XSS VS CSRF
+================================================================================
+
+Feature                     XSS                          CSRF
+---------------------------------------------------------------------------
+Attack type                 Script injection             Unauthorized request
+Target                      User browser                 Server
+Goal                        Steal user data              Perform actions
+Example                     Inject JavaScript            Fake request
+Prevention                  Input sanitization           CSRF tokens
+
+
+IMPORTANT INTERVIEW INSIGHT
+
+CORS does NOT prevent CSRF.
+
+CORS only prevents websites from reading responses.
+
+It does not stop requests from being sent.
+
+CSRF attacks only require the request to be sent, not the response.
+
+
+================================================================================
+SECTION 20: REAL PRODUCTION SECURITY STACK
+================================================================================
+
+Real-world applications implement multiple layers of security.
+
+Typical production protections include:
+
+Input sanitization
+Content Security Policy headers
+HTTP-only cookies
+CSRF tokens
+SameSite cookies
+JWT authentication
+HTTPS encryption
+
+Security in web applications relies on multiple layers working together to
+protect users from different types of attacks.
+
+
+================================================================================
+END OF BACKEND SECURITY NOTES
+================================================================================
