@@ -394,3 +394,50 @@ The server extracts the token and verifies it using the secret key.
 If verification succeeds, the server decodes the payload and identifies the
 user.
 
+
+================================================================================
+SECTION 9: CORS (CROSS-ORIGIN RESOURCE SHARING)
+================================================================================
+
+CORS is a browser security mechanism.
+
+CORS stands for:
+
+Cross-Origin Resource Sharing.
+
+Browsers enforce a policy called the Same Origin Policy.
+
+
+SAME ORIGIN POLICY (SOP)
+
+This rule states that a webpage can only send requests to the same origin
+from which it was loaded.
+
+An origin is defined by three components:
+
+Protocol
+Domain
+Port
+
+Example:
+
+http://localhost:3000
+http://localhost:5000
+
+These are considered different origins because the ports differ.
+
+CORS allows servers to specify which origins are allowed to access their
+resources.
+
+Example header:
+
+Access-Control-Allow-Origin: http://localhost:3000
+
+
+PREFLIGHT REQUEST
+
+Before certain requests, the browser sends an OPTIONS request called a
+preflight request.
+
+The purpose is to check whether the server allows the actual request.
+
