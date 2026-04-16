@@ -1,0 +1,487 @@
+================================================================================
+BACKEND SCALING & SYSTEM DESIGN COMPLETE NOTES (PHASE 6 — PART 2)
+Message Queues, Async Processing, Database Scaling, Replication, Sharding,
+Consistent Hashing, API Gateway
+================================================================================
+
+
+================================================================================
+11. MESSAGE QUEUES & ASYNCHRONOUS PROCESSING
+================================================================================
+
+PROBLEM:
+
+In many real-world applications, some tasks take a long time to complete.
+
+Example:
+
+POST /register
+
+After registration, system must:
+- send welcome email
+- process user analytics
+- upload profile image
+
+If these tasks are executed inside the API request, the total response time
+becomes very high.
+
+Example:
+
+Email → 5 seconds
+Analytics → 5 seconds
+Image processing → 5 seconds
+
+Total API response time = 15 seconds
+
+This leads to:
+
+Poor user experience
+Request timeouts
+Reduced system throughput
+
+------------------------------------------------------------
+
+SOLUTION: ASYNCHRONOUS PROCESSING USING MESSAGE QUEUES
+
+Instead of executing long tasks inside the request, they are moved to a
+background system.
+
+New architecture:
+
+Client → API Server → Queue → Worker
+
+Flow:
+
+1. Client sends request
+2. API processes main logic (e.g., user creation)
+3. API pushes background tasks into queue
+4. API responds immediately
+5. Worker processes tasks asynchronously
+
+------------------------------------------------------------
+
+INTERNAL WORKING:
+
+A message queue stores tasks (messages) temporarily.
+
+Each message represents a job:
+
+Example:
+
+{
+  type: "send_email",
+  userId: 123
+}
+
+Workers continuously read messages from the queue and process them.
+
+------------------------------------------------------------
+
+QUEUE COMPONENTS:
+
+Producer:
+API server that sends jobs
+
+Queue:
+Stores jobs
+
+Consumer (Worker):
+Processes jobs
+
+------------------------------------------------------------
+
+ADVANCED FEATURES:
+
+Retry mechanism:
+If job fails → retry automatically
+
+Delayed jobs:
+Execute job after certain time
+
+Example:
+Send reminder email after 24 hours
+
+------------------------------------------------------------
+
+TOOLS:
+
+- Redis (BullMQ)
+- RabbitMQ
+- Kafka
+- AWS SQS
+
+------------------------------------------------------------
+
+PROS:
+
+- fast API response
+- improved scalability
+- decoupled architecture
+- failure handling
+
+CONS:
+
+- increased system complexity
+- eventual consistency issues
+- requires monitoring
+
+------------------------------------------------------------
+
+INTERVIEW INSIGHT:
+
+Queues enable asynchronous processing and decouple services, which is critical
+for building scalable backend systems.
+
+
+================================================================================
+12. DATABASE SCALING (CORE BOTTLENECK SOLUTION)
+================================================================================
+
+PROBLEM:
+
+Even after scaling application servers, the database becomes a bottleneck.
+
+Example:
+
+10 API servers → 1 database
+
+Each server sends queries → database overload
+
+Problems:
+
+CPU overload
+Disk I/O bottleneck
+Connection limits exceeded
+Query latency increases
+
+This is known as the DATABASE BOTTLENECK problem.
+
+------------------------------------------------------------
+
+SOLUTION:
+
+Scale the database using:
+
+1. Read Replicas
+2. Sharding
+
+------------------------------------------------------------
+
+DATABASE SCALING TYPES:
+
+Vertical Scaling:
+Increase DB power (limited)
+
+Horizontal Scaling:
+Distribute load across multiple DBs
+
+------------------------------------------------------------
+
+13. READ REPLICAS (READ SCALING)
+================================================================================
+
+PROBLEM:
+
+Most applications are read-heavy.
+
+Example:
+
+90% reads, 10% writes
+
+Single database cannot handle high read traffic.
+
+------------------------------------------------------------
+
+SOLUTION:
+
+Create multiple copies of database called READ REPLICAS.
+
+Architecture:
+
+           Primary DB (writes)
+                 |
+        ---------------------
+        |         |         |
+   Replica1  Replica2  Replica3
+
+------------------------------------------------------------
+
+FLOW:
+
+Write queries → Primary DB
+
+Read queries → Replicas
+
+------------------------------------------------------------
+
+INTERNAL WORKING:
+
+Primary database replicates data to replicas.
+
+Replication types:
+
+1. Synchronous:
+Replica updated immediately
+
+2. Asynchronous:
+Replica updated after delay
+
+------------------------------------------------------------
+
+REPLICATION LAG:
+
+In asynchronous replication, replicas may not have latest data.
+
+Example:
+
+User updates profile
+Immediately fetches profile
+Replica may return old data
+
+------------------------------------------------------------
+
+PROS:
+
+- improved read scalability
+- reduced load on primary DB
+- better performance
+
+CONS:
+
+- replication lag
+- complex query routing
+- not suitable for heavy writes
+
+------------------------------------------------------------
+
+INTERVIEW INSIGHT:
+
+Use read replicas when system is read-heavy.
+
+
+================================================================================
+14. DATABASE SHARDING (DATA PARTITIONING)
+================================================================================
+
+PROBLEM:
+
+Even with replicas, one database cannot store or handle massive data.
+
+Example:
+
+1 billion users
+
+Single DB cannot scale storage and writes.
+
+------------------------------------------------------------
+
+SOLUTION: SHARDING
+
+Split database into smaller parts called SHARDS.
+
+Each shard stores part of data.
+
+------------------------------------------------------------
+
+ARCHITECTURE:
+
+Application → Shard Router → Multiple Databases
+
+------------------------------------------------------------
+
+SHARDING STRATEGIES:
+
+1. Range-based:
+Users split by ID range
+
+2. Hash-based:
+hash(userId) % n
+
+3. Location-based:
+Users split by region
+
+4. Alphabet-based:
+A–H, I–P, Q–Z
+
+------------------------------------------------------------
+
+SHARD KEY:
+
+Field used to decide shard.
+
+Example:
+userId, email, region
+
+------------------------------------------------------------
+
+PROBLEMS IN SHARDING:
+
+- complex queries (cross-shard joins)
+- rebalancing difficulty
+- uneven data distribution (hotspots)
+
+------------------------------------------------------------
+
+PROS:
+
+- handles massive data
+- improves write scalability
+- distributes load
+
+CONS:
+
+- high complexity
+- difficult maintenance
+- cross-shard queries expensive
+
+------------------------------------------------------------
+
+INTERVIEW INSIGHT:
+
+Sharding is used when a single database cannot scale further.
+
+
+================================================================================
+15. CONSISTENT HASHING (DISTRIBUTION STRATEGY)
+================================================================================
+
+PROBLEM:
+
+Using simple hashing:
+
+hash(key) % number_of_servers
+
+When a server is added/removed:
+- almost all keys remap
+- huge data movement required
+
+------------------------------------------------------------
+
+SOLUTION: CONSISTENT HASHING
+
+Map both servers and data onto a circular hash ring.
+
+------------------------------------------------------------
+
+WORKING:
+
+1. Hash servers onto ring
+2. Hash keys onto ring
+3. Assign key to nearest server clockwise
+
+------------------------------------------------------------
+
+ADVANTAGE:
+
+When new server added:
+Only small portion of data moves
+
+------------------------------------------------------------
+
+VIRTUAL NODES:
+
+Each server mapped multiple times to improve distribution
+
+------------------------------------------------------------
+
+PROS:
+
+- minimal data movement
+- scalable
+- balanced distribution
+
+CONS:
+
+- complex implementation
+- requires careful tuning
+
+------------------------------------------------------------
+
+INTERVIEW INSIGHT:
+
+Used in CDNs, distributed caches, and load balancing systems.
+
+
+================================================================================
+16. API GATEWAY (MICROSERVICES ENTRY POINT)
+================================================================================
+
+PROBLEM:
+
+In microservices architecture:
+
+Client must call multiple services:
+
+User Service
+Order Service
+Payment Service
+Notification Service
+
+Problems:
+
+- multiple network calls
+- complex frontend logic
+- duplicated authentication logic
+- no centralized control
+
+------------------------------------------------------------
+
+SOLUTION: API GATEWAY
+
+Single entry point for all client requests.
+
+------------------------------------------------------------
+
+ARCHITECTURE:
+
+Client → API Gateway → Microservices
+
+------------------------------------------------------------
+
+FUNCTIONS:
+
+- request routing
+- authentication (JWT validation)
+- rate limiting
+- logging & monitoring
+- response aggregation
+
+------------------------------------------------------------
+
+AGGREGATION EXAMPLE:
+
+Client calls:
+GET /dashboard
+
+Gateway internally calls:
+User Service
+Order Service
+Notification Service
+
+Returns combined response.
+
+------------------------------------------------------------
+
+PROS:
+
+- simplified client
+- centralized security
+- better monitoring
+- easier scaling
+
+CONS:
+
+- single point of failure (if not replicated)
+- added latency layer
+- complexity
+
+------------------------------------------------------------
+
+INTERVIEW INSIGHT:
+
+API Gateway is essential in microservices for managing and routing requests.
+
+
+================================================================================
+END OF PHASE 6 — COMPLETE
+================================================================================
