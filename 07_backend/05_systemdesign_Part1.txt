@@ -1,0 +1,533 @@
+PHASE 6 — SCALABLE BACKEND SYSTEMS (DETAILED NOTES — PART 1)
+
+This phase focuses on transforming a simple backend into a scalable,
+production-ready distributed system capable of handling millions of users.
+
+Core mindset shift:
+Single server → Distributed architecture
+Synchronous → Asynchronous
+Direct DB access → Layered architecture (Cache, Proxy, CDN)
+
+------------------------------------------------------------
+
+1. CACHING — PERFORMANCE FOUNDATION
+
+PROBLEM:
+
+In a naive system:
+
+Client → Server → Database
+
+Every request hits the database.
+
+Example:
+GET /products (1 million users)
+
+Each request:
+- executes DB query
+- consumes CPU + disk I/O
+- increases latency
+
+RESULT:
+- database overload
+- slow response time
+- system crashes under load
+
+------------------------------------------------------------
+
+SOLUTION: CACHING
+
+Caching stores frequently accessed data in a fast storage layer (RAM).
+
+New flow:
+
+Client → Server → Cache → Database
+
+Flow explanation:
+
+1. First request:
+   - Cache miss
+   - Data fetched from DB
+   - Stored in cache
+
+2. Next requests:
+   - Cache hit
+   - Data returned instantly
+
+------------------------------------------------------------
+
+INTERNAL BEHAVIOR:
+
+Cache sits between application and database.
+
+Data retrieval priority:
+1. Cache
+2. Database (only if needed)
+
+Latency comparison:
+- DB → 10–100 ms
+- Cache → ~1 ms
+
+------------------------------------------------------------
+
+CACHE PATTERN: CACHE-ASIDE (MOST IMPORTANT)
+
+Steps:
+1. Check cache
+2. If hit → return data
+3. If miss → fetch from DB
+4. Store in cache
+5. Return response
+
+Used in:
+Almost every production system
+
+------------------------------------------------------------
+
+CACHE INVALIDATION (CRITICAL PROBLEM)
+
+Problem:
+Database updated but cache still has old data.
+
+Example:
+Product price changed
+Cache still returns old price
+
+Solutions:
+
+1. Delete cache:
+   redis.del("products")
+
+2. Update cache:
+   redis.set("products", newData)
+
+3. TTL expiry:
+   Let cache auto-expire
+
+Trade-off:
+Consistency vs performance
+
+------------------------------------------------------------
+
+PROS:
+- reduces DB load
+- improves latency
+- increases scalability
+
+CONS:
+- stale data issues
+- memory cost
+- invalidation complexity
+
+------------------------------------------------------------
+
+INTERVIEW INSIGHT:
+
+"Cache invalidation is one of the hardest problems in distributed systems."
+
+------------------------------------------------------------
+
+2. REDIS — IN-MEMORY DATA STORE
+
+PROBLEM:
+
+We need a storage system that is:
+- extremely fast
+- supports caching
+- supports distributed systems
+
+Traditional DB:
+- disk-based → slow
+
+------------------------------------------------------------
+
+SOLUTION: REDIS
+
+Redis = Remote Dictionary Server
+
+It is:
+- in-memory key-value store
+- extremely fast
+- used as cache layer
+
+------------------------------------------------------------
+
+INTERNAL WORKING:
+
+- stores data in RAM
+- uses optimized data structures
+- communicates via TCP
+
+Example:
+
+SET user:123 "Vikash"
+GET user:123
+
+------------------------------------------------------------
+
+DATA STRUCTURES:
+
+1. String → simple key-value
+2. Hash → object-like storage
+3. List → queue-like structure
+4. Set → unique values
+5. Sorted Set → ranking systems
+
+------------------------------------------------------------
+
+TTL (Time To Live):
+
+SET user:123 data EX 600
+
+Meaning:
+Auto delete after 600 seconds
+
+------------------------------------------------------------
+
+USE CASES:
+
+- caching
+- session storage
+- rate limiting
+- queues
+- real-time analytics
+
+------------------------------------------------------------
+
+PROS:
+- extremely fast (~1 ms)
+- supports multiple structures
+- supports TTL
+
+CONS:
+- limited by RAM
+- data loss risk (if not persisted)
+
+------------------------------------------------------------
+
+INTERVIEW QUESTION:
+
+Why Redis is faster?
+
+Answer:
+Because it stores data in memory and avoids disk I/O.
+
+------------------------------------------------------------
+
+3. RATE LIMITING — SYSTEM PROTECTION
+
+PROBLEM:
+
+Without limits:
+- attacker sends millions of requests
+- server overloads
+- API crashes
+
+Example:
+Login endpoint → brute-force attack
+
+------------------------------------------------------------
+
+SOLUTION: RATE LIMITING
+
+Restrict number of requests per user.
+
+Example:
+100 requests/minute
+
+If exceeded:
+Return HTTP 429
+
+------------------------------------------------------------
+
+INTERNAL IMPLEMENTATION:
+
+Using Redis counters:
+
+Key:
+user:123:requests
+
+Flow:
+1. INCR key
+2. EXPIRE key (60 sec)
+3. If count > limit → block
+
+------------------------------------------------------------
+
+ALGORITHMS:
+
+1. Fixed Window
+- simple
+- allows bursts
+
+2. Sliding Window
+- more accurate
+- smoother rate control
+
+3. Token Bucket
+- tokens generated over time
+- most practical in production
+
+------------------------------------------------------------
+
+PROS:
+- prevents abuse
+- protects infrastructure
+- improves fairness
+
+CONS:
+- needs tuning
+- may block valid users
+
+------------------------------------------------------------
+
+4. HORIZONTAL SCALING — CORE SCALING STRATEGY
+
+PROBLEM:
+
+Single server has limits:
+- CPU
+- memory
+- network
+
+Example:
+Capacity = 10k req/sec
+Traffic = 100k req/sec
+
+------------------------------------------------------------
+
+SOLUTION: HORIZONTAL SCALING
+
+Add multiple servers instead of upgrading one.
+
+Architecture:
+
+Client → Load Balancer → Multiple Servers
+
+Each server handles part of traffic.
+
+------------------------------------------------------------
+
+INTERNAL IDEA:
+
+Distribute load across nodes.
+
+------------------------------------------------------------
+
+PROS:
+- scalable
+- fault tolerant
+- flexible
+
+CONS:
+- introduces distributed system complexity
+- session handling issues
+
+------------------------------------------------------------
+
+5. LOAD BALANCING
+
+PROBLEM:
+
+Multiple servers exist, but:
+Client does not know which server to use.
+
+------------------------------------------------------------
+
+SOLUTION:
+
+Load balancer distributes requests.
+
+------------------------------------------------------------
+
+ALGORITHMS:
+
+1. Round Robin
+Equal distribution
+
+2. Least Connections
+Send to least busy server
+
+3. IP Hash
+Same client → same server
+
+------------------------------------------------------------
+
+HEALTH CHECKS:
+
+Load balancer monitors servers:
+If server down → stop routing traffic
+
+------------------------------------------------------------
+
+PROS:
+- better resource utilization
+- high availability
+
+CONS:
+- additional component
+- single point of failure (if not replicated)
+
+------------------------------------------------------------
+
+6. REVERSE PROXY
+
+PROBLEM:
+
+Clients should not directly access backend servers.
+
+Reasons:
+- security
+- complexity
+- scaling
+
+------------------------------------------------------------
+
+SOLUTION:
+
+Reverse proxy sits between client and servers.
+
+Client → Proxy → Backend
+
+------------------------------------------------------------
+
+FUNCTIONS:
+
+- routing
+- load balancing
+- SSL termination
+- caching
+- compression
+
+------------------------------------------------------------
+
+SECURITY BENEFIT:
+
+Backend servers hidden from internet.
+
+------------------------------------------------------------
+
+7. SSL TERMINATION
+
+PROBLEM:
+
+Encryption is CPU intensive.
+
+If each server handles TLS:
+- high CPU usage
+- poor scalability
+
+------------------------------------------------------------
+
+SOLUTION:
+
+Terminate SSL at proxy.
+
+Client → HTTPS → Proxy
+Proxy → HTTP → Backend
+
+------------------------------------------------------------
+
+VARIANTS:
+
+1. SSL Termination
+Decrypt at proxy
+
+2. SSL Bridging
+Decrypt + re-encrypt
+
+3. SSL Pass-through
+No decryption at proxy
+
+------------------------------------------------------------
+
+TRADE-OFF:
+
+Performance vs security
+
+------------------------------------------------------------
+
+8. INTERNAL NETWORK TRUST
+
+Meaning:
+
+Backend communication happens in:
+- private network (VPC)
+- protected by firewall
+- not exposed publicly
+
+Hence HTTP is acceptable.
+
+If NOT trusted:
+Use HTTPS internally (SSL bridging)
+
+------------------------------------------------------------
+
+9. L4 vs L7 LOAD BALANCER
+
+L4:
+- works on TCP/IP
+- fast
+- no HTTP awareness
+
+L7:
+- understands HTTP
+- routing based on URL
+- supports SSL termination
+
+------------------------------------------------------------
+
+10. CDN — GLOBAL PERFORMANCE LAYER
+
+PROBLEM:
+
+Users far from server → high latency
+
+Example:
+India server, USA user
+
+------------------------------------------------------------
+
+SOLUTION: CDN
+
+Distributed edge servers globally.
+
+------------------------------------------------------------
+
+FLOW:
+
+1. User request
+2. Goes to nearest CDN edge
+3. Cache check:
+   - hit → return
+   - miss → fetch from origin
+4. Cache stored for future
+
+------------------------------------------------------------
+
+IMPORTANT CORRECTION:
+
+CDN checks cache FIRST, not origin first.
+
+------------------------------------------------------------
+
+COMPONENTS:
+
+- Edge server
+- Origin server
+- TTL
+
+------------------------------------------------------------
+
+PROS:
+- low latency
+- reduced backend load
+- DDoS protection
+
+CONS:
+- cache invalidation complexity
+- not ideal for dynamic data
+
+------------------------------------------------------------
+
+END OF PART 1
